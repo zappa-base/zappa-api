@@ -11,6 +11,7 @@ app.get('/', (req, res) => {
 });
 
 const server = new ApolloServer({
+  introspection : true,
   playground: true,
   ...schema,
 });
