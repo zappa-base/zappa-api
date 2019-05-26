@@ -11,7 +11,8 @@ app.get('/', (req, res) => {
 });
 
 const server = new ApolloServer({
-  ...schema
+  playground: true,
+  ...schema,
 });
 
 server.applyMiddleware({ app });
