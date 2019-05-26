@@ -22,14 +22,15 @@
     "typescript": "^3.4.5"
   },
   "scripts": {
-    "build": "npm run build:tsc",
     "build:tsc": "tsc",
-    "start": "node dist/index.js",
-    "start:debug": "node --inspect dist/index.js",
-    "dev": "nodemon",
+    "build": "npm run build:tsc",
     "dev:debug": "nodemon --config nodemon-inspect.json",
-    "tslint": "tslint -c tslint.json -p tsconfig.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon",
+    "postinstall": "npm run build",
+    "start:debug": "node --inspect dist/index.js",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "keywords": [],
   "author": "",
