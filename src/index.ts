@@ -1,26 +1,49 @@
-require('dotenv').config()
+require('dotenv').config();
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
+import 'reflect-metadata';
+import { createConnection, ConnectionOptions } from 'typeorm';
 
+import { User } from './db/entity/User';
 import { schema } from './graphql';
 import { config } from './config';
+const dbconfig = require('../ormconfig.json');
 
-const app = express();
+async function startServer() {
+  const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
+  app.get('/', (req, res) => {
+    res.send('Hello World');
+  });
 
-const server = new ApolloServer({
-  introspection : true,
-  playground: true,
-  ...schema,
-});
+  const mergeConfig: ConnectionOptions = {
+    type: 'postgres',
+    database: config.server.database,
+    username: config.server.username,
+    password: config.server.password,
+    host: config.server.host,
+    ...dbconfig,
+  };
 
-server.applyMiddleware({ app });
+  const connection = await createConnection(mergeConfig);
 
-const PORT = config.server.port || 4000;
+  if (connection.isConnected) {
+    console.log('Database connected.');
+  }
 
-app.listen(PORT, () => {
-  console.log(`Listening on http://localhost:${PORT}/graphql 🚀`);
-});
+  const server = new ApolloServer({
+    introspection : true,
+    playground: true,
+    ...schema,
+  });
+
+  server.applyMiddleware({ app });
+
+  const PORT = config.server.port || 4000;
+
+  app.listen(PORT, () => {
+    console.log(`Listening on http://localhost:${PORT}/graphql 🚀`);
+  });
+}
+
+startServer();

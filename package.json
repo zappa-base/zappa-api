@@ -9,13 +9,17 @@
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "graphql": "^14.3.1"
+    "graphql": "^14.3.1",
+    "pg": "^7.11.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.17"
   },
   "devDependencies": {
     "@types/dotenv": "^6.1.1",
     "@types/express": "^4.16.1",
     "@types/graphql": "^14.2.0",
     "@types/node": "^12.0.2",
+    "@types/pg": "^7.4.14",
     "concurrently": "^4.1.0",
     "graphql-tag": "^2.10.1",
     "nodemon": "^1.19.1",
@@ -26,8 +30,10 @@
   "scripts": {
     "build:tsc": "tsc",
     "build": "npm run build:tsc",
+    "db:create": "ts-node src/db/helpers/createDatabase.ts",
+    "db:drop": "ts-node src/db/helpers/dropDatabase.ts",
     "dev:debug": "nodemon --config nodemon-inspect.json",
-    "dev": "concurrently -k -n \"db, server\" -c \"green, cyan\" \"yarn dev:db\" \"yarn dev:server\"",
+    "dev": "npm run dev:server",
     "dev:server": "nodemon",
     "dev:db": "docker-compose up",
     "postinstall": "npm run build",
