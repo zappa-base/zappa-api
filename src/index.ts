@@ -1,13 +1,14 @@
 require('dotenv').config();
+
 import express from 'express';
-import { ApolloServer } from 'apollo-server-express';
 import 'reflect-metadata';
+
+import { ApolloServer } from 'apollo-server-express';
 import { createConnection, ConnectionOptions } from 'typeorm';
 
-import { User } from './db/entity/User';
 import { schema } from './graphql';
 import { config } from './config';
-const dbconfig = require('../ormconfig.json');
+import dbconfig from '../ormconfig.json';
 
 async function startServer() {
   const app = express();

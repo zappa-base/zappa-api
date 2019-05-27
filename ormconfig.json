@@ -1,7 +1,6 @@
 {
    "database": "zappa-dev",
    "host": "localhost",
-   "type": "postgres",
    "port": 5433,
    "synchronize": true,
    "logging": false,

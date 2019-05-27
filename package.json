@@ -10,6 +10,8 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "graphql": "^14.3.1",
+    "graphql-scraper": "^1.2.1",
+    "graphql-tools": "^4.0.4",
     "pg": "^7.11.0",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.17"
@@ -33,6 +35,7 @@
     "db:create": "ts-node src/db/helpers/createDatabase.ts",
     "db:drop": "ts-node src/db/helpers/dropDatabase.ts",
     "dev:debug": "nodemon --config nodemon-inspect.json",
+    "dev:scraper": "ts-node src/graphql/scraper/index.ts",
     "dev": "npm run dev:server",
     "dev:server": "nodemon",
     "dev:db": "docker-compose up",
@@ -41,6 +44,10 @@
     "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "tslint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "resolutions": {
+    "graphql": "^14.3.1",
+    "**/graphql": "^14.3.1"
   },
   "keywords": [],
   "author": "",
