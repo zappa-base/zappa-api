@@ -37,16 +37,19 @@
     "build": "npm run build:tsc",
     "db:create": "ts-node src/db/helpers/createDatabase.ts",
     "db:drop": "ts-node src/db/helpers/dropDatabase.ts",
+    "db:migrate": "yarn typeorm migration:run",
+    "db:revert": "yarn typeorm migration:revert",
+    "dev:db": "docker-compose up",
     "dev:debug": "nodemon --config nodemon-inspect.json",
     "dev:scraper": "ts-node src/graphql/scraper/index.ts",
-    "dev": "npm run dev:server",
     "dev:server": "nodemon",
-    "dev:db": "docker-compose up",
+    "dev": "npm run dev:server",
     "postinstall": "npm run build",
     "start:debug": "node --inspect dist/index.js",
     "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "tslint": "tslint -c tslint.json -p tsconfig.json"
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "typeorm": "ts-node ./node_modules/.bin/typeorm"  
   },
   "resolutions": {
     "graphql": "^14.3.1",
