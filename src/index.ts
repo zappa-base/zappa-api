@@ -4,27 +4,19 @@ import express from 'express';
 import 'reflect-metadata';
 
 import { ApolloServer } from 'apollo-server-express';
-import { createConnection } from 'typeorm';
 
-import { schema } from './graphql';
 import { config } from './config';
-import entities from './db/entities';
+import { createDBConnection } from './db/createDBConnection';
+import { schema } from './graphql';
 
 async function startServer() {
   const app = express();
 
   app.get('/', (req, res) => {
-    res.send('Hello World');
+    res.send('Hello from Zappa-Base');
   });
 
-  const connection = await createConnection({
-    ...config.db,
-    entities,
-  });
-
-  if (connection.isConnected) {
-    console.log('Database connected.');
-  }
+  await createDBConnection();
 
   const server = new ApolloServer({
     introspection : true,
