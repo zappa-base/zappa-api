@@ -17,10 +17,10 @@ export class User {
     @Column()
     role: string;
 
-    @Column()
+    @Column({ nullable: true })
     confirmedAt: Date;
 
-    @Column()
+    @Column({ nullable: true })
     deletedAt: Date;
 
     @CreateDateColumn()

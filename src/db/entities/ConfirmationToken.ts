@@ -10,13 +10,13 @@ export class ConfirmationToken {
     @Column()
     token: string;
 
-    @Column()
+    @Column({ nullable: true })
     confirmedAt: Date;
 
-    @Column()
+    @Column({ nullable: true })
     deletedAt: Date;
 
-    @Column()
+    @Column({ nullable: true })
     invalidatedAt: Date;
 
     @CreateDateColumn()
