@@ -4,11 +4,11 @@ import express from 'express';
 import 'reflect-metadata';
 
 import { ApolloServer } from 'apollo-server-express';
-import { createConnection, ConnectionOptions } from 'typeorm';
+import { createConnection } from 'typeorm';
 
 import { schema } from './graphql';
 import { config } from './config';
-import dbconfig from '../ormconfig.json';
+import entities from './db/entities';
 
 async function startServer() {
   const app = express();
@@ -17,16 +17,10 @@ async function startServer() {
     res.send('Hello World');
   });
 
-  const mergeConfig: ConnectionOptions = {
-    type: 'postgres',
-    database: config.server.database,
-    username: config.server.username,
-    password: config.server.password,
-    host: config.server.host,
-    ...dbconfig,
-  };
-
-  const connection = await createConnection(mergeConfig);
+  const connection = await createConnection({
+    ...config.db,
+    entities,
+  });
 
   if (connection.isConnected) {
     console.log('Database connected.');

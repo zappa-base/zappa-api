@@ -2,23 +2,22 @@ require('dotenv').config();
 
 import { Client } from 'pg';
 
-import dbConfig from '../../../ormconfig.json';
 import { config } from '../../config';
 
 async function createDatabase() {
   const client = new Client({
-    user: config.server.username,
-    password: config.server.password,
-    database: config.server.maintenceDB,
+    user: (config.db as any).username,
+    password: (config.db as any).password,
+    database: process.env.DB_MAINTENCE,
     host: config.server.host,
-    port: dbConfig.port,
+    port: (config.db as any).port,
   });
 
   await client.connect();
 
-  await client.query(`DROP DATABASE "${dbConfig.database}"`);
+  await client.query(`DROP DATABASE "${config.db.database}"`);
 
-  console.log(`Dropped Database: "${dbConfig.database}"`);
+  console.log(`Dropped Database: "${config.db.database}"`);
 
   await client.end();
 }
