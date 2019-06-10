@@ -2,6 +2,19 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateCol
 import { ConfirmationToken } from './ConfirmationToken';
 import { ResetToken } from './ResetToken';
 
+export enum UserStatus {
+    ACTIVE = 'active',
+    INACTIVE = 'inactive',
+    DELETED = 'deleted',
+    SUSPENDED = 'suspended',
+}
+
+export enum UserRole {
+    ADMIN = 'admin',
+    MODERATOR = 'moderator',
+    USER = 'user',
+}
+
 @Entity()
 export class User {
 
@@ -14,8 +27,19 @@ export class User {
     @Column()
     email: string;
 
-    @Column()
-    role: string;
+    @Column({
+        type: 'enum',
+        enum: UserRole,
+        default: UserRole.USER,
+    })
+    role: UserRole;
+
+    @Column({
+        type: 'enum',
+        enum: UserStatus,
+        default: UserStatus.INACTIVE,
+    })
+    status: UserStatus;
 
     @Column({ nullable: true })
     confirmedAt: Date;

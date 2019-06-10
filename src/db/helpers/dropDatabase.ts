@@ -3,12 +3,15 @@ require('dotenv').config();
 import { Client } from 'pg';
 
 import { config } from '../../config';
+import { confirmScript } from './confirmDBAction';
 
 async function createDatabase() {
+  await confirmScript('drop');
+
   const client = new Client({
     user: (config.db as any).username,
     password: (config.db as any).password,
-    database: process.env.DB_MAINTENCE,
+    database: process.env.DB_MAINTENCE || 'postgres',
     host: config.server.host,
     port: (config.db as any).port,
   });
