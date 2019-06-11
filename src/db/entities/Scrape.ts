@@ -1,5 +1,10 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
 
+export enum ScrapeStatus {
+    PENDING = 'pending',
+    ERROR = 'error',
+    COMPLETED = 'completed',
+}
 @Entity()
 export class Scrape {
 
@@ -14,6 +19,13 @@ export class Scrape {
 
     @Column({ nullable: true })
     type: string;
+
+    @Column({
+        type: 'enum',
+        enum: ScrapeStatus,
+        default: ScrapeStatus.PENDING,
+    })
+    status: ScrapeStatus;
 
     @Column({ nullable: true })
     deletedAt: Date;
