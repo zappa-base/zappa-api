@@ -12,6 +12,9 @@ export class Scrape {
     @Column({ nullable: true, type: 'json' })
     data: string;
 
+    @Column()
+    type: string;
+
     @Column({ nullable: true })
     deletedAt: Date;
 
