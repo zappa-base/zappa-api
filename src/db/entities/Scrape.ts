@@ -12,7 +12,7 @@ export class Scrape {
     @Column({ nullable: true, type: 'json' })
     data: string;
 
-    @Column()
+    @Column({ nullable: true })
     type: string;
 
     @Column({ nullable: true })
