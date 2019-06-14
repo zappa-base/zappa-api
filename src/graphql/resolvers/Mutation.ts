@@ -1,5 +1,7 @@
+import { signup } from './Auth/signup';
+import { login } from './Auth/login';
+
 export const Mutation = {
-  testMutation: (_: any, args: { name: any; }) => {
-    return `Hello ${args.name}`;
-  }
+  login,
+  signup,
 };
