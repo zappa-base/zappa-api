@@ -1,12 +1,19 @@
 import { ConnectionOptions } from 'typeorm';
-import { SqlServerConnectionCredentialsOptions } from 'typeorm/driver/sqlserver/SqlServerConnectionCredentialsOptions';
 
 interface IConfig {
+  auth: {
+    jwtSecret: string;
+    saltRounds: number;
+  };
   db: ConnectionOptions;
   server: any;
 }
 
 export const config: IConfig = {
+  auth: {
+    jwtSecret: process.env.JWT_SECRET,
+    saltRounds: 10,
+  },
   db: {
     database: process.env.DB_DATABASE,
     host: process.env.DB_HOST,
