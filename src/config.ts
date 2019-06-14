@@ -2,6 +2,7 @@ import { ConnectionOptions } from 'typeorm';
 
 interface IConfig {
   auth: {
+    tokenMaxAge: string;
     jwtSecret: string;
     saltRounds: number;
   };
@@ -11,6 +12,7 @@ interface IConfig {
 
 export const config: IConfig = {
   auth: {
+    tokenMaxAge: '1 days',
     jwtSecret: process.env.JWT_SECRET,
     saltRounds: 10,
   },
