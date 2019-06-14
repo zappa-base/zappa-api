@@ -22,10 +22,13 @@ export class User {
     id: string;
 
     @Column()
-    username: string;
+    nickname: string;
 
     @Column()
     email: string;
+
+    @Column()
+    password: string;
 
     @Column({
         type: 'enum',
