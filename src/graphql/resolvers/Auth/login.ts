@@ -4,7 +4,7 @@ import jsonwebtoken from 'jsonwebtoken';
 
 import { User } from '../../../db//entities/User';
 import { AuthenticationError } from 'apollo-server-core';
-import { generateTolken } from '../../../helpers/auth/generateToken';
+import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
 
 export async function login(_: any, args: any) {
   const { email, password } = args;
@@ -27,7 +27,7 @@ export async function login(_: any, args: any) {
     throw new AuthenticationError('Invalid email or password');
   }
 
-  const token = generateTolken(userExists);
+  const token = generateJWTToken(userExists);
 
   return {
     token,

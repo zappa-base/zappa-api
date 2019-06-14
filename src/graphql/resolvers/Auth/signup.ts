@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt';
 import { User } from '../../../db//entities/User';
 import { config } from '../../../config';
 import { ForbiddenError } from 'apollo-server-core';
-import { generateTolken } from '../../../helpers/auth/generateToken';
+import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
 
 export async function signup(_: any, args: any) {
   const { email, password, nickname } = args;
@@ -29,7 +29,7 @@ export async function signup(_: any, args: any) {
 
   const newUser = await userRepository.save(user);
 
-  const token = generateTolken(newUser);
+  const token = generateJWTToken(newUser);
 
   return {
     token,

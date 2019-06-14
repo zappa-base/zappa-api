@@ -4,7 +4,7 @@ import moment from 'moment';
 import { User } from '../../db/entities/User';
 import { config } from '../../config';
 
-export function generateTolken(user: User) {
+export function generateJWTToken(user: User) {
   return jsonwebtoken.sign({
     email: user.email,
     exp: moment().add(15, 'minutes').unix(),

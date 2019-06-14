@@ -3,7 +3,7 @@ import { verify } from 'jsonwebtoken';
 
 import { User } from '../../../db//entities/User';
 import { AuthenticationError } from 'apollo-server-core';
-import { generateTolken } from '../../../helpers/auth/generateToken';
+import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
 import { config } from '../../../config';
 import { IToken } from '../../../types/IToken';
 
@@ -39,7 +39,7 @@ export async function authorize(_: any, args: any) {
     throw new AuthenticationError('Invalid email or password');
   }
 
-  const newtoken = generateTolken(userExists);
+  const newtoken = generateJWTToken(userExists);
 
   return {
     token: newtoken,
