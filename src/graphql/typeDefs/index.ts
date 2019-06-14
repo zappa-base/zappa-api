@@ -4,7 +4,7 @@ import { UserLoginType } from './UserLogin';
 
 export const typeDefs = gql`
   type Query {
-    testQuery: String
+    users: [User]
   }
 
   type Mutation {
