@@ -15,10 +15,10 @@ const client = nodemailer.createTransport(mailgun({
 export function getMailer() {
   const email = new Email({
     message: {
-      from: 'text@example.com',
+      from: 'admin@example.com',
     },
-    preview: true,
-    send: false,
+    preview: config.server.isDevelopment,
+    send: !config.server.isDevelopment,
     transport: client,
     views: {
       root: path.join(`${__dirname}/templates`),

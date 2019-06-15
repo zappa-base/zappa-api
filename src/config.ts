@@ -10,7 +10,12 @@ interface IConfig {
     mailgubApi: string,
   };
   db: ConnectionOptions;
-  server: any;
+  server: {
+    env: 'development' | 'production'
+    isDevelopment: boolean,
+    isProduction: boolean,
+    port: string | number,
+  };
 }
 
 export const config: IConfig = {
@@ -33,7 +38,9 @@ export const config: IConfig = {
     username: process.env.DB_USER,
   },
   server: {
-    env: process.env.NODE_ENV || 'development',
+    env: (process.env.NODE_ENV as 'development' | 'production') || 'development',
+    isDevelopment: process.env.NODE_ENV === 'development',
+    isProduction: process.env.NODE_ENV === 'production',
     port: process.env.PORT,
   },
 };
