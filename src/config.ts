@@ -34,6 +34,7 @@ export const config: IConfig = {
     password: process.env.DB_PASSWORD,
     port: Number(process.env.DB_PORT) ? Number(process.env.DB_PORT) : 5432,
     synchronize: process.env.DB_SYNCHRONIZE === 'true',
+    ssl: process.env.DB_SSL === 'true',
     type: 'postgres',
     username: process.env.DB_USER,
   },
