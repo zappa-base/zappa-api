@@ -19,7 +19,13 @@ async function startServer() {
       credentialsRequired: false,
       secret: config.auth.jwtSecret,
      })
-    );
+  );
+
+  app.use(function (err: any, req: any, res: any, next: any) {
+    if (err.name === 'UnauthorizedError') {
+      next();
+    }
+  });
 
   await createDBConnection();
 
