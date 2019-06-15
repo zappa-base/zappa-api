@@ -19,6 +19,10 @@ export async function requestReset(obj: any, args: any) {
     throw new UserInputError('Invalid email');
   }
 
+  if (!user.confirmedAt) {
+    throw new UserInputError('Invalid user not confirmed');
+  }
+
   const resetTokenRepository = connection.getRepository(ResetToken);
 
   const resetTokens = await resetTokenRepository.find({

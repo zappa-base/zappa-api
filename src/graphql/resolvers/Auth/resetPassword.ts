@@ -29,6 +29,10 @@ export async function resetPassword(_: any, args: any) {
     throw new AuthenticationError('Invalid reset token');
   }
 
+  if (!resetToken.user.confirmedAt) {
+    throw new AuthenticationError('Invalid user not confirmed');
+  }
+
   if (resetToken.user.deletedAt) {
     throw new AuthenticationError('Invalid user');
   }
