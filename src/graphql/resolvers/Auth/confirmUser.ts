@@ -4,7 +4,7 @@ import hashjs from 'hash.js';
 
 import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
 import { ConfirmationToken } from '../../../db/entities/ConfirmationToken';
-import { User } from '../../../db/entities/User';
+import { User, UserStatus } from '../../../db/entities/User';
 
 export async function confirmUser(_: any, args: any) {
   const { token } = args;
@@ -19,7 +19,7 @@ export async function confirmUser(_: any, args: any) {
       {relations: ['user'] },
     );
 
-  if (!confirmationToken) {
+  if (!confirmationToken || confirmationToken.invalidatedAt || confirmationToken.deletedAt) {
     throw new AuthenticationError('Invalid confirmation token');
   }
 
@@ -38,6 +38,7 @@ export async function confirmUser(_: any, args: any) {
   const userRepository = connection.getRepository(User);
 
   confirmationToken.user.confirmedAt = new Date();
+  confirmationToken.user.status = UserStatus.ACTIVE;
   confirmationToken.confirmedAt = new Date();
 
   await userRepository.save(confirmationToken.user);

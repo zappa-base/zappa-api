@@ -5,8 +5,14 @@
     <title>Confirmation Token</title>
   </head>
   <body>
-    Thank you <%= nickname %> for signing. Please follow the confirmation link below.
+    <p>
+      Thank you <%= nickname %> for signing. Please follow the confirmation link below.
+    </p>
 
     <a href=<%= link %>>Click here to confirm your account</a>
+
+    <p>
+      Confirmation Token: <%= token %>
+    </p>
   </body>
 </html>

@@ -4,11 +4,8 @@ import bcrypt from 'bcrypt';
 import { User } from '../../../db//entities/User';
 import { config } from '../../../config';
 import { ForbiddenError, ApolloError } from 'apollo-server-core';
-import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
-import { ConfirmationToken } from '../../../db/entities/ConfirmationToken';
-import { generateUUIDToken } from '../../../helpers/auth/generateUUIDToken';
 import { setUserConfirmationToken } from '../../../helpers/auth/setUserConfirmationToken';
-import { sendConfirmationEmail } from './confirmationEmail';
+import { sendConfirmationEmail } from '../../../emails/confirmationEmail';
 
 export async function signup(_: any, args: any) {
   const { email, password, nickname } = args;

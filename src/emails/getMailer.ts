@@ -17,8 +17,8 @@ export function getMailer() {
     message: {
       from: 'text@example.com',
     },
-    preview: false,
-    send: true,
+    preview: true,
+    send: false,
     transport: client,
     views: {
       root: path.join(`${__dirname}/templates`),
