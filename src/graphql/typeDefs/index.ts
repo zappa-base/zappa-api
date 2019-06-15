@@ -11,7 +11,7 @@ export const typeDefs = gql`
     authorize(token: String!): UserLogin
     confirmUser(token: String!): UserLogin
     login(email: String!, password: String!): UserLogin
-    signup(email: String!, password: String!, nickname: String): UserLogin
+    signup(email: String!, password: String!, nickname: String): Boolean
   }
 
   ${UserLoginType}

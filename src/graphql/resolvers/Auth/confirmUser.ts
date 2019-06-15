@@ -19,6 +19,10 @@ export async function confirmUser(_: any, args: any) {
       {relations: ['user'] },
     );
 
+  if (!confirmationToken) {
+    throw new AuthenticationError('Invalid confirmation token');
+  }
+
   if (confirmationToken.confirmedAt) {
     throw new UserInputError('Confimation token already used');
   }

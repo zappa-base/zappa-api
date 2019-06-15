@@ -6,6 +6,9 @@ interface IConfig {
     jwtSecret: string;
     saltRounds: number;
   };
+  email: {
+    mailgubApi: string,
+  };
   db: ConnectionOptions;
   server: any;
 }
@@ -15,6 +18,9 @@ export const config: IConfig = {
     tokenMaxAge: '1 days',
     jwtSecret: process.env.JWT_SECRET,
     saltRounds: 10,
+  },
+  email: {
+    mailgubApi: process.env.MAILGUN_API,
   },
   db: {
     database: process.env.DB_DATABASE,
@@ -27,6 +33,7 @@ export const config: IConfig = {
     username: process.env.DB_USER,
   },
   server: {
+    env: process.env.NODE_ENV || 'development',
     port: process.env.PORT,
   },
 };

@@ -21,6 +21,10 @@ export async function login(_: any, args: any) {
     throw new AuthenticationError('Invalid email or password');
   }
 
+  if (!userExists.confirmedAt) {
+    throw new AuthenticationError('User not confirmed yet');
+  }
+
   const validPassword = await bcrypt.compare(password, userExists.password);
 
   if (!validPassword) {
