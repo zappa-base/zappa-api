@@ -14,7 +14,7 @@ interface IConfig {
     env: 'development' | 'production'
     isDevelopment: boolean,
     isProduction: boolean,
-    port: string | number,
+    port: string,
   };
 }
 
