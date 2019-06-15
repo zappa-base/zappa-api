@@ -1,7 +1,9 @@
 require('dotenv').config();
 
-import express from 'express';
 import 'reflect-metadata';
+
+import express from 'express';
+import jwt from 'express-jwt';
 
 import { ApolloServer } from 'apollo-server-express';
 
@@ -12,13 +14,19 @@ import { schema } from './graphql';
 async function startServer() {
   const app = express();
 
-  app.get('/', (req, res) => {
-    res.send('Hello from Zappa-Base');
-  });
+  app.use(
+    jwt({
+      credentialsRequired: false,
+      secret: config.auth.jwtSecret,
+     })
+    );
 
   await createDBConnection();
 
   const server = new ApolloServer({
+    context: ({ req }: any) => ({
+      user: req.user,
+    }),
     introspection : true,
     playground: true,
     ...schema,

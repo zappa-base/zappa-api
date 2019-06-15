@@ -1,5 +1,8 @@
+import { getConnection } from 'typeorm';
+import { User } from '../../db/entities/User';
+
 export const Query =  {
-  testQuery: () => {
-    return 'Hello Query';
+  users: async () => {
+    return getConnection().getRepository(User).find();
   }
 };
