@@ -11,7 +11,7 @@ export class ResetToken {
     token: string;
 
     @Column({ nullable: true })
-    confirmedAt: Date;
+    resetAt: Date;
 
     @Column({ nullable: true })
     deletedAt: Date;

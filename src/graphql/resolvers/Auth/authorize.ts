@@ -35,7 +35,7 @@ export async function authorize(_: any, args: any) {
 
   const userExists = await userRepository.findOne(id);
 
-  if (!userExists) {
+  if (!userExists || userExists.deletedAt) {
     throw new AuthenticationError('Invalid email or password');
   }
 

@@ -1,6 +1,5 @@
 import { getConnection } from 'typeorm';
 import bcrypt from 'bcrypt';
-import jsonwebtoken from 'jsonwebtoken';
 
 import { User } from '../../../db//entities/User';
 import { AuthenticationError } from 'apollo-server-core';
@@ -17,7 +16,7 @@ export async function login(_: any, args: any) {
     email,
   });
 
-  if (!userExists) {
+  if (!userExists || userExists.deletedAt) {
     throw new AuthenticationError('Invalid email or password');
   }
 

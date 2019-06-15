@@ -31,6 +31,10 @@ export async function confirmUser(_: any, args: any) {
     throw new AuthenticationError('Invalid confirmation token');
   }
 
+  if (confirmationToken.user.deletedAt) {
+    throw new AuthenticationError('Invalid user');
+  }
+
   if (confirmationToken.user.confirmedAt) {
     throw new UserInputError('User already confirmed');
   }
