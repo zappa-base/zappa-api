@@ -25,6 +25,6 @@ export class ResetToken {
     @UpdateDateColumn()
     updatedAt: Date;
 
-    @ManyToOne(type => User, user => user.resetTokens)
+    @ManyToOne(type => User, user => user.resetTokens, { cascade: true, onDelete: 'CASCADE' })
     user: User;
 }

@@ -25,6 +25,6 @@ export class ConfirmationToken {
     @UpdateDateColumn()
     updatedAt: Date;
 
-    @ManyToOne(type => User, user => user.confirmationTokens)
+    @ManyToOne(type => User, user => user.confirmationTokens, { cascade: true, onDelete: 'CASCADE' })
     user: User;
 }
