@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, Index } from 'typeorm';
 import { ConfirmationToken } from './ConfirmationToken';
 import { ResetToken } from './ResetToken';
 
@@ -24,7 +24,8 @@ export class User {
     @Column()
     nickname: string;
 
-    @Column()
+    @Index()
+    @Column({ unique: true })
     email: string;
 
     @Column()
