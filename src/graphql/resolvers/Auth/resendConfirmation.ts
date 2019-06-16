@@ -1,7 +1,8 @@
-import { ApolloError, UserInputError } from 'apollo-server-core';
+import { ApolloError, AuthenticationError, UserInputError } from 'apollo-server-core';
 import { getConnection, IsNull } from 'typeorm';
 
 import { ConfirmationToken } from '../../../db/entities/ConfirmationToken';
+import { UserStatus } from '../../../db/entities/User';
 import { UserRepository } from '../../../db/repositories/UserRepository';
 import { sendConfirmationEmail } from '../../../emails/confirmationEmail';
 import { setUserConfirmationToken } from '../../../helpers/auth/setUserConfirmationToken';
@@ -17,6 +18,10 @@ export async function resendConfirmation(obj: any, args: any) {
 
   if (!user || user.deletedAt) {
     throw new UserInputError('Invalid email');
+  }
+
+  if (user.status !== UserStatus.ACTIVE) {
+    throw new AuthenticationError('Invalid user, contact admin about account status');
   }
 
   if (user.confirmedAt) {

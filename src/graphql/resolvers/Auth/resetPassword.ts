@@ -5,7 +5,7 @@ import { getConnection } from 'typeorm';
 
 import { config } from '../../../config';
 import { ResetToken } from '../../../db/entities/ResetToken';
-import { User } from '../../../db/entities/User';
+import { User, UserStatus } from '../../../db/entities/User';
 import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
 
 export async function resetPassword(_: any, args: any) {
@@ -27,6 +27,10 @@ export async function resetPassword(_: any, args: any) {
 
   if (!resetToken.user) {
     throw new AuthenticationError('Invalid reset token');
+  }
+
+  if (resetToken.user.status !== UserStatus.ACTIVE) {
+    throw new AuthenticationError('Invalid user, contact admin about account status');
   }
 
   if (!resetToken.user.confirmedAt) {

@@ -31,6 +31,10 @@ export async function confirmUser(_: any, args: any) {
     throw new AuthenticationError('Invalid confirmation token');
   }
 
+  if (confirmationToken.user.status === UserStatus.SUSPENDED || confirmationToken.user.status === UserStatus.DELETED) {
+    throw new AuthenticationError('Invalid user, contact admin about account status');
+  }
+
   if (confirmationToken.user.deletedAt) {
     throw new AuthenticationError('Invalid user');
   }
