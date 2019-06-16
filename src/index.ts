@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 import { ApolloServer } from 'apollo-server-express';
+import cors from 'cors';
 import express from 'express';
 import jwt from 'express-jwt';
 import 'reflect-metadata';
@@ -11,6 +12,8 @@ import { schema } from './graphql';
 
 async function startServer() {
   const app = express();
+
+  app.use(cors());
 
   app.use(
     jwt({
