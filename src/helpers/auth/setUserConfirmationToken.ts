@@ -1,6 +1,8 @@
-import { User } from '../../db/entities/User';
 import { Connection } from 'typeorm';
+
 import { ConfirmationToken } from '../../db/entities/ConfirmationToken';
+import { User } from '../../db/entities/User';
+
 import { generateUUIDToken } from './generateUUIDToken';
 
 export async function setUserConfirmationToken(connection: Connection, user: User) {

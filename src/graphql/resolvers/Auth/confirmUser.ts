@@ -1,10 +1,10 @@
 import { AuthenticationError, UserInputError } from 'apollo-server-core';
-import { getConnection } from 'typeorm';
 import hashjs from 'hash.js';
+import { getConnection } from 'typeorm';
 
-import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
 import { ConfirmationToken } from '../../../db/entities/ConfirmationToken';
 import { User, UserStatus } from '../../../db/entities/User';
+import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
 
 export async function confirmUser(_: any, args: any) {
   const { token } = args;
@@ -29,6 +29,10 @@ export async function confirmUser(_: any, args: any) {
 
   if (!confirmationToken.user) {
     throw new AuthenticationError('Invalid confirmation token');
+  }
+
+  if (confirmationToken.user.status === UserStatus.SUSPENDED || confirmationToken.user.status === UserStatus.DELETED) {
+    throw new AuthenticationError('Invalid user, contact admin about account status');
   }
 
   if (confirmationToken.user.deletedAt) {

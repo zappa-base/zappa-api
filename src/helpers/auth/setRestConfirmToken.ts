@@ -1,7 +1,9 @@
-import { User } from '../../db/entities/User';
 import { Connection } from 'typeorm';
-import { generateUUIDToken } from './generateUUIDToken';
+
 import { ResetToken } from '../../db/entities/ResetToken';
+import { User } from '../../db/entities/User';
+
+import { generateUUIDToken } from './generateUUIDToken';
 
 export async function setUserResetToken(connection: Connection, user: User) {
   const resetTokenRepository = connection.getRepository(ResetToken);

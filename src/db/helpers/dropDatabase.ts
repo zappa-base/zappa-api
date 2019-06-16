@@ -4,6 +4,7 @@ import { Client } from 'pg';
 import { PostgresConnectionCredentialsOptions } from 'typeorm/driver/postgres/PostgresConnectionCredentialsOptions';
 
 import { config } from '../../config';
+
 import { confirmScript } from './confirmDBAction';
 
 async function createDatabase() {

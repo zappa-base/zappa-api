@@ -1,8 +1,8 @@
 import jsonwebtoken from 'jsonwebtoken';
 import moment from 'moment';
 
-import { User } from '../../db/entities/User';
 import { config } from '../../config';
+import { User } from '../../db/entities/User';
 
 export function generateJWTToken(user: User) {
   return jsonwebtoken.sign({

@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne } from 'typeorm';
+import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+
 import { User } from './User';
 
 @Entity()
@@ -25,6 +26,6 @@ export class ConfirmationToken {
     @UpdateDateColumn()
     updatedAt: Date;
 
-    @ManyToOne(type => User, user => user.confirmationTokens)
+    @ManyToOne(type => User, user => user.confirmationTokens, { cascade: true, onDelete: 'CASCADE' })
     user: User;
 }

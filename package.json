@@ -12,6 +12,7 @@
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "copyfiles": "^2.1.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
     "email-templates": "^5.1.0",
@@ -52,10 +53,10 @@
     "typescript": "^3.4.5"
   },
   "scripts": {
+    "build:all": "run-s build:tsc build:copy:emails",
+    "build:copy:emails": "copyfiles -a -u 3 src/emails/templates/**/* dist/emails/templates",
     "build:tsc": "tsc",
     "build": "npm run build:tsc",
-    "build:copy:emails": "copyfiles -a -u 3 src/emails/templates/**/* dist/emails/templates",
-    "build:all": "run-s build:tsc build:copy:emails",
     "db:create": "ts-node src/db/helpers/createDatabase.ts",
     "db:drop": "ts-node src/db/helpers/dropDatabase.ts",
     "db:migration:create": "yarn typeorm migration:create",

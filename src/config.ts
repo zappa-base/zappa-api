@@ -40,8 +40,12 @@ export const config: IConfig = {
   },
   server: {
     env: (process.env.NODE_ENV as 'development' | 'production') || 'development',
-    isDevelopment: process.env.NODE_ENV === 'development',
+    isDevelopment: isDevelopment(),
     isProduction: process.env.NODE_ENV === 'production',
     port: process.env.PORT,
   },
 };
+
+function isDevelopment() {
+  return process.env.NODE_ENV === 'development' || ['production', 'staging'].indexOf(process.env.NODE_ENV) === -1;
+}
