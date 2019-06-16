@@ -5,6 +5,14 @@
           true,
           "check-space"
       ],
+      "ordered-imports": [
+        true,
+        {
+          "import-sources-order": "lowercase-first",
+          "grouped-imports": true,
+          "named-imports-order": "lowercase-first"
+        }
+      ],
       "indent": [
           true,
           "spaces"
@@ -14,6 +22,7 @@
           "check-open-brace",
           "check-whitespace"
       ],
+      "no-unused-variable": [true, {"ignore-pattern": "^_" } ],
       "no-var-keyword": true,
       "quotemark": [
           true,

@@ -1,12 +1,12 @@
-import { getConnection } from 'typeorm';
+import { ApolloError, ForbiddenError } from 'apollo-server-core';
 import bcrypt from 'bcrypt';
+import { getConnection } from 'typeorm';
 
-import { User } from '../../../db//entities/User';
 import { config } from '../../../config';
-import { ForbiddenError, ApolloError } from 'apollo-server-core';
-import { setUserConfirmationToken } from '../../../helpers/auth/setUserConfirmationToken';
-import { sendConfirmationEmail } from '../../../emails/confirmationEmail';
+import { User } from '../../../db//entities/User';
 import { UserRepository } from '../../../db/repositories/UserRepository';
+import { sendConfirmationEmail } from '../../../emails/confirmationEmail';
+import { setUserConfirmationToken } from '../../../helpers/auth/setUserConfirmationToken';
 
 export async function signup(_: any, args: any) {
   const { email, password, nickname } = args;

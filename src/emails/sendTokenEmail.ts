@@ -1,4 +1,5 @@
 import { User } from '../db/entities/User';
+
 import { getMailer } from './getMailer';
 
 export async function sendTokenEmail(user: User, token: string, template: 'reset' | 'confirmation') {

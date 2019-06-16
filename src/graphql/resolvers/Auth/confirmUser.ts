@@ -1,10 +1,10 @@
 import { AuthenticationError, UserInputError } from 'apollo-server-core';
-import { getConnection } from 'typeorm';
 import hashjs from 'hash.js';
+import { getConnection } from 'typeorm';
 
-import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
 import { ConfirmationToken } from '../../../db/entities/ConfirmationToken';
 import { User, UserStatus } from '../../../db/entities/User';
+import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
 
 export async function confirmUser(_: any, args: any) {
   const { token } = args;

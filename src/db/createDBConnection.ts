@@ -1,6 +1,7 @@
 import { createConnection } from 'typeorm';
 
 import { config } from '../config';
+
 import entities from './entities';
 
 export async function createDBConnection() {

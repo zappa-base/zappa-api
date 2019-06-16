@@ -1,12 +1,12 @@
 import { AuthenticationError } from 'apollo-server-core';
-import { getConnection } from 'typeorm';
 import bcrypt from 'bcrypt';
 import hashjs from 'hash.js';
+import { getConnection } from 'typeorm';
 
-import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
-import { User } from '../../../db/entities/User';
-import { ResetToken } from '../../../db/entities/ResetToken';
 import { config } from '../../../config';
+import { ResetToken } from '../../../db/entities/ResetToken';
+import { User } from '../../../db/entities/User';
+import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
 
 export async function resetPassword(_: any, args: any) {
   const { token, password } = args;

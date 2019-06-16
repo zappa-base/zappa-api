@@ -1,8 +1,9 @@
 
+import Email from 'email-templates';
 import nodemailer from 'nodemailer';
 import mailgun from 'nodemailer-mailgun-transport';
-import Email from 'email-templates';
 import path from 'path';
+
 import { config } from '../config';
 
 const client = nodemailer.createTransport(mailgun({

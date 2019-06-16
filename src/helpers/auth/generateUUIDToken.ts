@@ -1,5 +1,5 @@
-import uuidv4 from 'uuid/v4';
 import hashjs from 'hash.js';
+import uuidv4 from 'uuid/v4';
 
 type ReturnType = [string, string | undefined];
 

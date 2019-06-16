@@ -1,10 +1,10 @@
 require('dotenv').config();
 
-import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
+import express from 'express';
+import scraperSchema from 'graphql-scraper';
 
 import { config } from '../../config';
-import scraperSchema from 'graphql-scraper';
 
 async function startServer() {
   const app = express();

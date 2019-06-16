@@ -1,5 +1,3 @@
-import { IResolvers } from 'graphql-tools';
-import { IResolverContext } from './IResolverContext';
 import { Context } from 'apollo-server-core';
 import { GraphQLResolveInfo } from 'graphql';
 

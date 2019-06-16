@@ -1,4 +1,5 @@
 import gql  from 'graphql-tag';
+
 import { UserType } from './User';
 import { UserLoginType } from './UserLogin';
 

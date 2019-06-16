@@ -1,10 +1,10 @@
-import { getConnection } from 'typeorm';
-import { verify } from 'jsonwebtoken';
-
-import { User } from '../../../db//entities/User';
 import { AuthenticationError } from 'apollo-server-core';
-import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
+import { verify } from 'jsonwebtoken';
+import { getConnection } from 'typeorm';
+
 import { config } from '../../../config';
+import { User } from '../../../db//entities/User';
+import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
 import { IToken } from '../../../types/IToken';
 
 export async function authorize(_: any, args: any) {

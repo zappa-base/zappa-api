@@ -1,11 +1,9 @@
 require('dotenv').config();
 
-import 'reflect-metadata';
-
+import { ApolloServer } from 'apollo-server-express';
 import express from 'express';
 import jwt from 'express-jwt';
-
-import { ApolloServer } from 'apollo-server-express';
+import 'reflect-metadata';
 
 import { config } from './config';
 import { createDBConnection } from './db/createDBConnection';
