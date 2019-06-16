@@ -15,7 +15,7 @@ export async function login(_: any, args: any) {
 
   const userExists = await userRepository.findByEmail(email);
 
-  if (!userExists || userExists.deletedAt || userExists.status !== UserStatus.ACTIVE) {
+  if (!userExists || userExists.deletedAt) {
     throw new AuthenticationError('Invalid email or password');
   }
 
