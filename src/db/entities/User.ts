@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, Index } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, Index, BeforeInsert, BeforeUpdate } from 'typeorm';
 import { ConfirmationToken } from './ConfirmationToken';
 import { ResetToken } from './ResetToken';
 
@@ -62,4 +62,12 @@ export class User {
 
     @OneToMany(type => ResetToken, resetToken => resetToken.user)
     resetTokens: ResetToken[];
+
+    @BeforeInsert()
+    @BeforeUpdate()
+    lowerCaseEmail() {
+        if (this.email) {
+            this.email = this.email.toLowerCase();
+        }
+    }
 }

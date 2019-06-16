@@ -1,18 +1,19 @@
 import { getConnection, IsNull } from 'typeorm';
-import { User } from '../../../db/entities/User';
+
 import { UserInputError, ApolloError } from 'apollo-server-core';
 import { ConfirmationToken } from '../../../db/entities/ConfirmationToken';
 import { sendConfirmationEmail } from '../../../emails/confirmationEmail';
 import { setUserConfirmationToken } from '../../../helpers/auth/setUserConfirmationToken';
+import { UserRepository } from '../../../db/repositories/UserRepository';
 
 export async function resendConfirmation(obj: any, args: any) {
   const { email } = args;
 
   const connection = getConnection();
 
-  const userRepository = connection.getRepository(User);
+  const userRepository = connection.getCustomRepository(UserRepository);
 
-  const user = await userRepository.findOne({ email });
+  const user = await userRepository.findByEmail(email);
 
   if (!user || user.deletedAt) {
     throw new UserInputError('Invalid email');

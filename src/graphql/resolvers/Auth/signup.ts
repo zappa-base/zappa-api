@@ -6,17 +6,16 @@ import { config } from '../../../config';
 import { ForbiddenError, ApolloError } from 'apollo-server-core';
 import { setUserConfirmationToken } from '../../../helpers/auth/setUserConfirmationToken';
 import { sendConfirmationEmail } from '../../../emails/confirmationEmail';
+import { UserRepository } from '../../../db/repositories/UserRepository';
 
 export async function signup(_: any, args: any) {
   const { email, password, nickname } = args;
 
   const connection = getConnection();
 
-  const userRepository = connection.getRepository(User);
+  const userRepository = connection.getCustomRepository(UserRepository);
 
-  const userExists = await userRepository.findOne({
-    email,
-  });
+  const userExists = await userRepository.findByEmail(email);
 
   if (userExists) {
     throw new ForbiddenError('Email already taken');

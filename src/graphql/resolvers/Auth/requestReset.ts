@@ -1,19 +1,19 @@
 import { getConnection, IsNull } from 'typeorm';
 import { UserInputError, ApolloError } from 'apollo-server-core';
 
-import { User } from '../../../db/entities/User';
 import { ResetToken } from '../../../db/entities/ResetToken';
 import { setUserResetToken } from '../../../helpers/auth/setRestConfirmToken';
 import { sendResetEmail } from '../../../emails/resetEmail';
+import { UserRepository } from '../../../db/repositories/UserRepository';
 
 export async function requestReset(obj: any, args: any) {
   const { email } = args;
 
   const connection = getConnection();
 
-  const userRepository = connection.getRepository(User);
+  const userRepository = connection.getCustomRepository(UserRepository);
 
-  const user = await userRepository.findOne({ email });
+  const user = await userRepository.findByEmail(email);
 
   if (!user || user.deletedAt) {
     throw new UserInputError('Invalid email');

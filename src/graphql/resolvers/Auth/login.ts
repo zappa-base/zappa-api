@@ -1,20 +1,18 @@
 import { getConnection } from 'typeorm';
 import bcrypt from 'bcrypt';
 
-import { User } from '../../../db//entities/User';
 import { AuthenticationError } from 'apollo-server-core';
 import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
+import { UserRepository } from '../../../db/repositories/UserRepository';
 
 export async function login(_: any, args: any) {
   const { email, password } = args;
 
   const connection = getConnection();
 
-  const userRepository = connection.getRepository(User);
+  const userRepository = connection.getCustomRepository(UserRepository);
 
-  const userExists = await userRepository.findOne({
-    email,
-  });
+  const userExists = await userRepository.findByEmail(email);
 
   if (!userExists || userExists.deletedAt) {
     throw new AuthenticationError('Invalid email or password');
