@@ -6,26 +6,26 @@ import { User } from './User';
 export class ResetToken {
 
     @PrimaryGeneratedColumn('uuid')
-    id: string;
+    public id: string;
 
     @Column()
-    token: string;
+    public token: string;
 
     @Column({ nullable: true })
-    resetAt: Date;
+    public resetAt: Date;
 
     @Column({ nullable: true })
-    deletedAt: Date;
+    public deletedAt: Date;
 
     @Column({ nullable: true })
-    invalidatedAt: Date;
+    public invalidatedAt: Date;
 
     @CreateDateColumn()
-    createdAt: Date;
+    public createdAt: Date;
 
     @UpdateDateColumn()
-    updatedAt: Date;
+    public updatedAt: Date;
 
-    @ManyToOne(type => User, user => user.resetTokens, { cascade: true, onDelete: 'CASCADE' })
-    user: User;
+    @ManyToOne(() => User, (user) => user.resetTokens, { cascade: true, onDelete: 'CASCADE' })
+    public user: User;
 }

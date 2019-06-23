@@ -7,7 +7,7 @@ import { UserRepository } from '../../../db/repositories/UserRepository';
 import { sendResetEmail } from '../../../emails/resetEmail';
 import { setUserResetToken } from '../../../helpers/auth/setRestConfirmToken';
 
-export async function requestReset(obj: any, args: any) {
+export async function requestReset(_obj: any, args: any) {
   const { email } = args;
 
   const connection = getConnection();
@@ -31,14 +31,14 @@ export async function requestReset(obj: any, args: any) {
   const resetTokenRepository = connection.getRepository(ResetToken);
 
   const resetTokens = await resetTokenRepository.find({
-    user,
-    resetAt: IsNull(),
-    invalidatedAt: IsNull(),
     deletedAt: IsNull(),
+    invalidatedAt: IsNull(),
+    resetAt: IsNull(),
+    user,
    });
 
   if (resetTokens && resetTokens.length) {
-    resetTokens.forEach(token => {
+    resetTokens.forEach((token) => {
       token.invalidatedAt = new Date();
     });
 

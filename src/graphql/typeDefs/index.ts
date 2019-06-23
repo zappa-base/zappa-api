@@ -1,24 +1,13 @@
-import gql  from 'graphql-tag';
-
+import { UserRoleType } from './Enums/UserRole';
+import { Mutation } from './Mutation';
+import { Query } from './Query';
 import { UserType } from './User';
 import { UserLoginType } from './UserLogin';
 
-export const typeDefs = gql`
-  type Query {
-    users: [User]
-    currentUser: User
-  }
-
-  type Mutation {
-    authorize(token: String!): UserLogin
-    confirmUser(token: String!): UserLogin
-    login(email: String!, password: String!): UserLogin
-    requestReset(email: String!): Boolean
-    resetPassword(password: String!, token: String!): UserLogin
-    resendConfirmation(email: String!): Boolean
-    signup(email: String!, password: String!, nickname: String): Boolean
-  }
-
-  ${UserLoginType}
-  ${UserType}
-`;
+export const typeDefs = [
+  Mutation,
+  Query,
+  UserLoginType,
+  UserRoleType,
+  UserType,
+];

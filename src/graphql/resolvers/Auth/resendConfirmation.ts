@@ -7,7 +7,7 @@ import { UserRepository } from '../../../db/repositories/UserRepository';
 import { sendConfirmationEmail } from '../../../emails/confirmationEmail';
 import { setUserConfirmationToken } from '../../../helpers/auth/setUserConfirmationToken';
 
-export async function resendConfirmation(obj: any, args: any) {
+export async function resendConfirmation(_: any, args: any) {
   const { email } = args;
 
   const connection = getConnection();
@@ -31,14 +31,14 @@ export async function resendConfirmation(obj: any, args: any) {
   const confirmationTokenRepository = connection.getRepository(ConfirmationToken);
 
   const confirmationTokens = await confirmationTokenRepository.find({
-    user,
     confirmedAt: IsNull(),
-    invalidatedAt: IsNull(),
     deletedAt: IsNull(),
+    invalidatedAt: IsNull(),
+    user,
    });
 
   if (confirmationTokens && confirmationTokens.length) {
-    confirmationTokens.forEach(token => {
+    confirmationTokens.forEach((token) => {
       token.invalidatedAt = new Date();
     });
 

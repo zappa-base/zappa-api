@@ -20,53 +20,53 @@ export enum UserRole {
 export class User {
 
     @PrimaryGeneratedColumn('uuid')
-    id: string;
+    public id: string;
 
     @Column()
-    nickname: string;
+    public nickname: string;
 
     @Index()
     @Column({ unique: true })
-    email: string;
+    public email: string;
 
     @Column()
-    password: string;
+    public password: string;
 
     @Column({
         type: 'enum',
         enum: UserRole,
         default: UserRole.USER,
     })
-    role: UserRole;
+    public role: UserRole;
 
     @Column({
-        type: 'enum',
-        enum: UserStatus,
         default: UserStatus.INACTIVE,
+        enum: UserStatus,
+        type: 'enum',
     })
-    status: UserStatus;
+    public status: UserStatus;
 
     @Column({ nullable: true })
-    confirmedAt: Date;
+    public confirmedAt: Date;
 
     @Column({ nullable: true })
-    deletedAt: Date;
+    public deletedAt: Date;
 
     @CreateDateColumn()
-    createdAt: Date;
+    public createdAt: Date;
 
     @UpdateDateColumn()
-    updatedAt: Date;
+    public updatedAt: Date;
 
-    @OneToMany(type => ConfirmationToken, confirmationToken => confirmationToken.user)
-    confirmationTokens: ConfirmationToken[];
+    @OneToMany(() => ConfirmationToken, (confirmationToken) => confirmationToken.user)
+    public confirmationTokens: ConfirmationToken[];
 
-    @OneToMany(type => ResetToken, resetToken => resetToken.user)
-    resetTokens: ResetToken[];
+    @OneToMany(() => ResetToken, (resetToken) => resetToken.user)
+    public resetTokens: ResetToken[];
 
     @BeforeInsert()
     @BeforeUpdate()
-    lowerCaseEmail() {
+    public lowerCaseEmail() {
         if (this.email) {
             this.email = this.email.toLowerCase();
         }

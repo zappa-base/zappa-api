@@ -6,26 +6,26 @@ import { User } from './User';
 export class ConfirmationToken {
 
     @PrimaryGeneratedColumn('uuid')
-    id: string;
+    public id: string;
 
     @Column()
-    token: string;
+    public token: string;
 
     @Column({ nullable: true })
-    confirmedAt: Date;
+    public confirmedAt: Date;
 
     @Column({ nullable: true })
-    deletedAt: Date;
+    public deletedAt: Date;
 
     @Column({ nullable: true })
-    invalidatedAt: Date;
+    public invalidatedAt: Date;
 
     @CreateDateColumn()
-    createdAt: Date;
+    public createdAt: Date;
 
     @UpdateDateColumn()
-    updatedAt: Date;
+    public updatedAt: Date;
 
-    @ManyToOne(type => User, user => user.confirmationTokens, { cascade: true, onDelete: 'CASCADE' })
-    user: User;
+    @ManyToOne(() => User, (user) => user.confirmationTokens, { cascade: true, onDelete: 'CASCADE' })
+    public user: User;
 }
