@@ -13,16 +13,11 @@ export async function authorize(_: any, args: any) {
   let decoded: IToken;
 
   try {
-    decoded = verify(
-      token,
-      config.auth.jwtSecret,
-      {
-        ignoreExpiration: true,
-        maxAge: config.auth.tokenMaxAge,
-        },
-    ) as IToken;
+    decoded = verify(token, config.auth.jwtSecret, {
+      ignoreExpiration: true,
+      maxAge: config.auth.tokenMaxAge,
+    }) as IToken;
   } catch (error) {
-
     console.error(error);
     throw new ForbiddenError('Invalid Token');
   }
@@ -40,7 +35,9 @@ export async function authorize(_: any, args: any) {
   }
 
   if (userExists.status !== UserStatus.ACTIVE) {
-    throw new ForbiddenError('Invalid user, contact admin about account status');
+    throw new ForbiddenError(
+      'Invalid user, contact admin about account status',
+    );
   }
 
   const newtoken = generateJWTToken(userExists);
@@ -49,5 +46,4 @@ export async function authorize(_: any, args: any) {
     token: newtoken,
     user: userExists,
   };
-
 }

@@ -19,7 +19,7 @@ async function startServer() {
     jwt({
       credentialsRequired: false,
       secret: config.auth.jwtSecret,
-     }),
+    }),
   );
 
   app.use(function AuthErrorCheck(err: any, _req: any, _res: any, next: any) {

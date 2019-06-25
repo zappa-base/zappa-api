@@ -39,5 +39,4 @@ export async function signup(_: any, args: any) {
   }
 
   return true;
-
 }

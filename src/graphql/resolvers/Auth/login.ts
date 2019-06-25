@@ -20,7 +20,9 @@ export async function login(_: any, args: any) {
   }
 
   if (userExists.status !== UserStatus.ACTIVE) {
-    throw new AuthenticationError('Invalid user, contact admin about account status');
+    throw new AuthenticationError(
+      'Invalid user, contact admin about account status',
+    );
   }
 
   if (!userExists.confirmedAt) {
@@ -39,5 +41,4 @@ export async function login(_: any, args: any) {
     token,
     user: userExists,
   };
-
 }

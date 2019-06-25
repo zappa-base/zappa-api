@@ -15,13 +15,22 @@ export async function resetPassword(_: any, args: any) {
 
   const resetTokenRepository = connection.getRepository(ResetToken);
 
-  const resetToken = await resetTokenRepository
-    .findOne(
-      { token: hashjs.sha256().update(token).digest('hex')},
-      {relations: ['user'] },
-    );
+  const resetToken = await resetTokenRepository.findOne(
+    {
+      token: hashjs
+        .sha256()
+        .update(token)
+        .digest('hex'),
+    },
+    { relations: ['user'] },
+  );
 
-  if (!resetToken || resetToken.invalidatedAt || resetToken.deletedAt || resetToken.resetAt) {
+  if (
+    !resetToken ||
+    resetToken.invalidatedAt ||
+    resetToken.deletedAt ||
+    resetToken.resetAt
+  ) {
     throw new AuthenticationError('Invalid reset token');
   }
 
@@ -30,7 +39,9 @@ export async function resetPassword(_: any, args: any) {
   }
 
   if (resetToken.user.status !== UserStatus.ACTIVE) {
-    throw new AuthenticationError('Invalid user, contact admin about account status');
+    throw new AuthenticationError(
+      'Invalid user, contact admin about account status',
+    );
   }
 
   if (!resetToken.user.confirmedAt) {
@@ -43,7 +54,10 @@ export async function resetPassword(_: any, args: any) {
 
   const userRepository = connection.getRepository(User);
 
-  resetToken.user.password = await bcrypt.hash(password, config.auth.saltRounds);
+  resetToken.user.password = await bcrypt.hash(
+    password,
+    config.auth.saltRounds,
+  );
   resetToken.resetAt = new Date();
 
   await userRepository.save(resetToken.user);
@@ -55,5 +69,4 @@ export async function resetPassword(_: any, args: any) {
     token: newtoken,
     user: resetToken.user,
   };
-
 }

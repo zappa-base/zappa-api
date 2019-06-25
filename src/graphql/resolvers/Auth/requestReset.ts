@@ -1,4 +1,8 @@
-import { ApolloError, AuthenticationError, UserInputError } from 'apollo-server-core';
+import {
+  ApolloError,
+  AuthenticationError,
+  UserInputError,
+} from 'apollo-server-core';
 import { getConnection, IsNull } from 'typeorm';
 
 import { ResetToken } from '../../../db/entities/ResetToken';
@@ -21,7 +25,9 @@ export async function requestReset(_obj: any, args: any) {
   }
 
   if (user.status !== UserStatus.ACTIVE) {
-    throw new AuthenticationError('Invalid user, contact admin about account status');
+    throw new AuthenticationError(
+      'Invalid user, contact admin about account status',
+    );
   }
 
   if (!user.confirmedAt) {
@@ -35,7 +41,7 @@ export async function requestReset(_obj: any, args: any) {
     invalidatedAt: IsNull(),
     resetAt: IsNull(),
     user,
-   });
+  });
 
   if (resetTokens && resetTokens.length) {
     resetTokens.forEach((token) => {

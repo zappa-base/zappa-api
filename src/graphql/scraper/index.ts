@@ -1,6 +1,5 @@
-require('dotenv').config();
-
 import { ApolloServer } from 'apollo-server-express';
+import 'dotenv/config';
 import express from 'express';
 import scraperSchema from 'graphql-scraper';
 
@@ -10,7 +9,7 @@ async function startServer() {
   const app = express();
 
   const server = new ApolloServer({
-    introspection : true,
+    introspection: true,
     playground: true,
     schema: scraperSchema,
   });
@@ -20,7 +19,7 @@ async function startServer() {
   const PORT = (Number(config.server.port) || 4000) + 1;
 
   app.listen(PORT, () => {
-    console.log(`Listening on http://localhost:${PORT}/graphql 🚀`);
+    console.info(`Listening on http://localhost:${PORT}/graphql 🚀`);
   });
 }
 

@@ -7,7 +7,7 @@ export function createApollo() {
     context: ({ req }: any) => ({
       user: req.user,
     }),
-    introspection : true,
+    introspection: true,
     playground: true,
     schema,
   });

@@ -10,7 +10,7 @@ export async function setUserResetToken(connection: Connection, user: User) {
 
   const resetTokenRow = new ResetToken();
 
-  const [ resetToken, tokenHash ] = await generateUUIDToken(true);
+  const [resetToken, tokenHash] = await generateUUIDToken(true);
 
   resetTokenRow.token = tokenHash;
   resetTokenRow.user = user;
