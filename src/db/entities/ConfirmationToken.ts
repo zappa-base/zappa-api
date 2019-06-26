@@ -1,31 +1,40 @@
-import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 import { User } from './User';
 
 @Entity()
 export class ConfirmationToken {
+  @PrimaryGeneratedColumn('uuid')
+  public id: string;
 
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+  @Column()
+  public token: string;
 
-    @Column()
-    token: string;
+  @Column({ nullable: true })
+  public confirmedAt: Date;
 
-    @Column({ nullable: true })
-    confirmedAt: Date;
+  @Column({ nullable: true })
+  public deletedAt: Date;
 
-    @Column({ nullable: true })
-    deletedAt: Date;
+  @Column({ nullable: true })
+  public invalidatedAt: Date;
 
-    @Column({ nullable: true })
-    invalidatedAt: Date;
+  @CreateDateColumn()
+  public createdAt: Date;
 
-    @CreateDateColumn()
-    createdAt: Date;
+  @UpdateDateColumn()
+  public updatedAt: Date;
 
-    @UpdateDateColumn()
-    updatedAt: Date;
-
-    @ManyToOne(type => User, user => user.confirmationTokens, { cascade: true, onDelete: 'CASCADE' })
-    user: User;
+  @ManyToOne(() => User, (user) => user.confirmationTokens, {
+    cascade: true,
+    onDelete: 'CASCADE',
+  })
+  public user: User;
 }

@@ -11,15 +11,25 @@ export async function confirmUser(_: any, args: any) {
 
   const connection = getConnection();
 
-  const confirmationTokenRepository = connection.getRepository(ConfirmationToken);
+  const confirmationTokenRepository = connection.getRepository(
+    ConfirmationToken,
+  );
 
-  const confirmationToken = await confirmationTokenRepository
-    .findOne(
-      { token: hashjs.sha256().update(token).digest('hex')},
-      {relations: ['user'] },
-    );
+  const confirmationToken = await confirmationTokenRepository.findOne(
+    {
+      token: hashjs
+        .sha256()
+        .update(token)
+        .digest('hex'),
+    },
+    { relations: ['user'] },
+  );
 
-  if (!confirmationToken || confirmationToken.invalidatedAt || confirmationToken.deletedAt) {
+  if (
+    !confirmationToken ||
+    confirmationToken.invalidatedAt ||
+    confirmationToken.deletedAt
+  ) {
     throw new AuthenticationError('Invalid confirmation token');
   }
 
@@ -31,8 +41,13 @@ export async function confirmUser(_: any, args: any) {
     throw new AuthenticationError('Invalid confirmation token');
   }
 
-  if (confirmationToken.user.status === UserStatus.SUSPENDED || confirmationToken.user.status === UserStatus.DELETED) {
-    throw new AuthenticationError('Invalid user, contact admin about account status');
+  if (
+    confirmationToken.user.status === UserStatus.SUSPENDED ||
+    confirmationToken.user.status === UserStatus.DELETED
+  ) {
+    throw new AuthenticationError(
+      'Invalid user, contact admin about account status',
+    );
   }
 
   if (confirmationToken.user.deletedAt) {
@@ -58,5 +73,4 @@ export async function confirmUser(_: any, args: any) {
     token: newtoken,
     user: confirmationToken.user,
   };
-
 }

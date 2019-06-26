@@ -1,4 +1,4 @@
-import { AuthenticationError } from 'apollo-server-core';
+import { ForbiddenError } from 'apollo-server-core';
 import { verify } from 'jsonwebtoken';
 import { getConnection } from 'typeorm';
 
@@ -13,18 +13,13 @@ export async function authorize(_: any, args: any) {
   let decoded: IToken;
 
   try {
-    decoded = verify(
-      token,
-      config.auth.jwtSecret,
-      {
-        ignoreExpiration: true,
-        maxAge: config.auth.tokenMaxAge,
-        },
-    ) as IToken;
+    decoded = verify(token, config.auth.jwtSecret, {
+      ignoreExpiration: true,
+      maxAge: config.auth.tokenMaxAge,
+    }) as IToken;
   } catch (error) {
-
     console.error(error);
-    throw new AuthenticationError('Invalid Token');
+    throw new ForbiddenError('Invalid Token');
   }
 
   const id = decoded.id;
@@ -36,11 +31,13 @@ export async function authorize(_: any, args: any) {
   const userExists = await userRepository.findOne(id);
 
   if (!userExists || userExists.deletedAt) {
-    throw new AuthenticationError('Invalid email or password');
+    throw new ForbiddenError('Invalid email or password');
   }
 
   if (userExists.status !== UserStatus.ACTIVE) {
-    throw new AuthenticationError('Invalid user, contact admin about account status');
+    throw new ForbiddenError(
+      'Invalid user, contact admin about account status',
+    );
   }
 
   const newtoken = generateJWTToken(userExists);
@@ -49,5 +46,4 @@ export async function authorize(_: any, args: any) {
     token: newtoken,
     user: userExists,
   };
-
 }

@@ -11,7 +11,7 @@ export async function createDBConnection() {
   });
 
   if (connection.isConnected) {
-    console.log('Database connected.');
+    console.info('Database connected.');
   }
 
   return connection;

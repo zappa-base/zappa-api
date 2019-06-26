@@ -8,9 +8,11 @@ export async function generateUUIDToken(withHash = false): Promise<ReturnType> {
   let hash: string;
 
   if (withHash) {
-    hash = hashjs.sha256().update(uuid).digest('hex');
+    hash = hashjs
+      .sha256()
+      .update(uuid)
+      .digest('hex');
   }
 
   return [uuid, hash];
-
 }

@@ -5,5 +5,6 @@ export const UserType = gql`
     email: String
     id: String
     nickname: String
+    role: UserRole
   }
 `;
