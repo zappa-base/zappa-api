@@ -1,4 +1,8 @@
-import { ApolloError, AuthenticationError, UserInputError } from 'apollo-server-core';
+import {
+  ApolloError,
+  AuthenticationError,
+  UserInputError,
+} from 'apollo-server-core';
 import { getConnection, IsNull } from 'typeorm';
 
 import { ConfirmationToken } from '../../../db/entities/ConfirmationToken';
@@ -7,7 +11,7 @@ import { UserRepository } from '../../../db/repositories/UserRepository';
 import { sendConfirmationEmail } from '../../../emails/confirmationEmail';
 import { setUserConfirmationToken } from '../../../helpers/auth/setUserConfirmationToken';
 
-export async function resendConfirmation(obj: any, args: any) {
+export async function resendConfirmation(_: any, args: any) {
   const { email } = args;
 
   const connection = getConnection();
@@ -21,24 +25,28 @@ export async function resendConfirmation(obj: any, args: any) {
   }
 
   if (user.status !== UserStatus.ACTIVE) {
-    throw new AuthenticationError('Invalid user, contact admin about account status');
+    throw new AuthenticationError(
+      'Invalid user, contact admin about account status',
+    );
   }
 
   if (user.confirmedAt) {
     throw new UserInputError('User already confirmed');
   }
 
-  const confirmationTokenRepository = connection.getRepository(ConfirmationToken);
+  const confirmationTokenRepository = connection.getRepository(
+    ConfirmationToken,
+  );
 
   const confirmationTokens = await confirmationTokenRepository.find({
-    user,
     confirmedAt: IsNull(),
-    invalidatedAt: IsNull(),
     deletedAt: IsNull(),
-   });
+    invalidatedAt: IsNull(),
+    user,
+  });
 
   if (confirmationTokens && confirmationTokens.length) {
-    confirmationTokens.forEach(token => {
+    confirmationTokens.forEach((token) => {
       token.invalidatedAt = new Date();
     });
 

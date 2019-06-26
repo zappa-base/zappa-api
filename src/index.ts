@@ -1,6 +1,6 @@
-require('dotenv').config();
+import 'dotenv/config';
 
-import { ApolloServer } from 'apollo-server-express';
+// tslint:disable-next-line:ordered-imports next-line
 import cors from 'cors';
 import express from 'express';
 import jwt from 'express-jwt';
@@ -8,7 +8,7 @@ import 'reflect-metadata';
 
 import { config } from './config';
 import { createDBConnection } from './db/createDBConnection';
-import { schema } from './graphql';
+import { createApollo } from './graphql/createApollo';
 
 async function startServer() {
   const app = express();
@@ -19,10 +19,10 @@ async function startServer() {
     jwt({
       credentialsRequired: false,
       secret: config.auth.jwtSecret,
-     })
+    }),
   );
 
-  app.use(function (err: any, req: any, res: any, next: any) {
+  app.use(function AuthErrorCheck(err: any, _req: any, _res: any, next: any) {
     if (err.name === 'UnauthorizedError') {
       next();
     }
@@ -30,21 +30,14 @@ async function startServer() {
 
   await createDBConnection();
 
-  const server = new ApolloServer({
-    context: ({ req }: any) => ({
-      user: req.user,
-    }),
-    introspection : true,
-    playground: true,
-    ...schema,
-  });
+  const server = createApollo();
 
   server.applyMiddleware({ app });
 
   const PORT = config.server.port || 4000;
 
   app.listen(PORT, () => {
-    console.log(`Listening on http://localhost:${PORT}/graphql 🚀`);
+    console.info(`Listening on http://localhost:${PORT}/graphql 🚀`);
   });
 }
 

@@ -1,74 +1,86 @@
-import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, Index, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import {
+  BeforeInsert,
+  BeforeUpdate,
+  Column,
+  CreateDateColumn,
+  Entity,
+  Index,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 import { ConfirmationToken } from './ConfirmationToken';
 import { ResetToken } from './ResetToken';
 
 export enum UserStatus {
-    ACTIVE = 'active',
-    INACTIVE = 'inactive',
-    DELETED = 'deleted',
-    SUSPENDED = 'suspended',
+  ACTIVE = 'active',
+  INACTIVE = 'inactive',
+  DELETED = 'deleted',
+  SUSPENDED = 'suspended',
 }
 
 export enum UserRole {
-    ADMIN = 'admin',
-    MODERATOR = 'moderator',
-    USER = 'user',
+  ADMIN = 'admin',
+  MODERATOR = 'moderator',
+  USER = 'user',
 }
 
 @Entity()
 export class User {
+  @PrimaryGeneratedColumn('uuid')
+  public id: string;
 
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+  @Column()
+  public nickname: string;
 
-    @Column()
-    nickname: string;
+  @Index()
+  @Column({ unique: true })
+  public email: string;
 
-    @Index()
-    @Column({ unique: true })
-    email: string;
+  @Column()
+  public password: string;
 
-    @Column()
-    password: string;
+  @Column({
+    default: UserRole.USER,
+    enum: UserRole,
+    type: 'enum',
+  })
+  public role: UserRole;
 
-    @Column({
-        type: 'enum',
-        enum: UserRole,
-        default: UserRole.USER,
-    })
-    role: UserRole;
+  @Column({
+    default: UserStatus.INACTIVE,
+    enum: UserStatus,
+    type: 'enum',
+  })
+  public status: UserStatus;
 
-    @Column({
-        type: 'enum',
-        enum: UserStatus,
-        default: UserStatus.INACTIVE,
-    })
-    status: UserStatus;
+  @Column({ nullable: true })
+  public confirmedAt: Date;
 
-    @Column({ nullable: true })
-    confirmedAt: Date;
+  @Column({ nullable: true })
+  public deletedAt: Date;
 
-    @Column({ nullable: true })
-    deletedAt: Date;
+  @CreateDateColumn()
+  public createdAt: Date;
 
-    @CreateDateColumn()
-    createdAt: Date;
+  @UpdateDateColumn()
+  public updatedAt: Date;
 
-    @UpdateDateColumn()
-    updatedAt: Date;
+  @OneToMany(
+    () => ConfirmationToken,
+    (confirmationToken) => confirmationToken.user,
+  )
+  public confirmationTokens: ConfirmationToken[];
 
-    @OneToMany(type => ConfirmationToken, confirmationToken => confirmationToken.user)
-    confirmationTokens: ConfirmationToken[];
+  @OneToMany(() => ResetToken, (resetToken) => resetToken.user)
+  public resetTokens: ResetToken[];
 
-    @OneToMany(type => ResetToken, resetToken => resetToken.user)
-    resetTokens: ResetToken[];
-
-    @BeforeInsert()
-    @BeforeUpdate()
-    lowerCaseEmail() {
-        if (this.email) {
-            this.email = this.email.toLowerCase();
-        }
+  @BeforeInsert()
+  @BeforeUpdate()
+  public lowerCaseEmail() {
+    if (this.email) {
+      this.email = this.email.toLowerCase();
     }
+  }
 }
