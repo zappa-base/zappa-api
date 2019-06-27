@@ -1,0 +1,6 @@
+type User {
+  email: String
+  id: String
+  nickname: String
+  role: UserRole
+}

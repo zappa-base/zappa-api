@@ -1,0 +1,4 @@
+type UserLogin {
+  token: String
+  user: User
+}
