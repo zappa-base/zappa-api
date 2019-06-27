@@ -60,7 +60,7 @@
   "scripts": {
     "build:all": "run-s build:tsc build:copy:emails build:copy:types",
     "build:copy:emails": "copyfiles -a -u 3 src/emails/templates/**/* dist/emails/templates",
-    "build:copy:types": "copyfiles -a -u 3 src/graphql/**/*.gql dist/graphql/typeDefs",
+    "build:copy:types": "copyfiles -a -u 3 src/graphql/**/*/*.gql dist/graphql/typeDefs",
     "build:tsc": "tsc",
     "build": "npm run build:tsc",
     "db:create": "ts-node src/db/helpers/createDatabase.ts",
