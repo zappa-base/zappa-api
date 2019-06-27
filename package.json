@@ -23,6 +23,7 @@
     "graphql-tools": "^4.0.4",
     "hash.js": "^1.1.7",
     "jsonwebtoken": "^8.5.1",
+    "merge-graphql-schemas": "^1.5.8",
     "moment": "^2.24.0",
     "nodemailer": "^6.2.1",
     "nodemailer-mailgun-transport": "^1.4.0",
@@ -57,8 +58,9 @@
     "typescript": "^3.4.5"
   },
   "scripts": {
-    "build:all": "run-s build:tsc build:copy:emails",
+    "build:all": "run-s build:tsc build:copy:emails build:copy:types",
     "build:copy:emails": "copyfiles -a -u 3 src/emails/templates/**/* dist/emails/templates",
+    "build:copy:types": "copyfiles -a -u 3 src/graphql/typedefs/**/*.gql dist/graphql/typedefs",
     "build:tsc": "tsc",
     "build": "npm run build:tsc",
     "db:create": "ts-node src/db/helpers/createDatabase.ts",
