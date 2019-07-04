@@ -1,6 +1,6 @@
 import {
   ApolloError,
-  AuthenticationError,
+  ForbiddenError,
   UserInputError,
 } from 'apollo-server-core';
 import { getConnection, IsNull } from 'typeorm';
@@ -25,7 +25,7 @@ export async function requestReset(_obj: any, args: any) {
   }
 
   if (user.status !== UserStatus.ACTIVE) {
-    throw new AuthenticationError(
+    throw new ForbiddenError(
       'Invalid user, contact admin about account status',
     );
   }
