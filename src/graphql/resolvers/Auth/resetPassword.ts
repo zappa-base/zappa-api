@@ -1,12 +1,12 @@
-import { AuthenticationError } from 'apollo-server-core';
+import { ForbiddenError } from 'apollo-server-core';
 import bcrypt from 'bcrypt';
-import hashjs from 'hash.js';
 import { getConnection } from 'typeorm';
 
 import { config } from '../../../config';
 import { ResetToken } from '../../../db/entities/ResetToken';
 import { User, UserStatus } from '../../../db/entities/User';
 import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
+import { hashToken } from '../../../helpers/auth/hashToken';
 
 export async function resetPassword(_: any, args: any) {
   const { token, password } = args;
@@ -17,10 +17,7 @@ export async function resetPassword(_: any, args: any) {
 
   const resetToken = await resetTokenRepository.findOne(
     {
-      token: hashjs
-        .sha256()
-        .update(token)
-        .digest('hex'),
+      token: hashToken(token),
     },
     { relations: ['user'] },
   );
@@ -31,25 +28,25 @@ export async function resetPassword(_: any, args: any) {
     resetToken.deletedAt ||
     resetToken.resetAt
   ) {
-    throw new AuthenticationError('Invalid reset token');
+    throw new ForbiddenError('Invalid reset token');
   }
 
   if (!resetToken.user) {
-    throw new AuthenticationError('Invalid reset token');
+    throw new ForbiddenError('Invalid reset token');
   }
 
   if (resetToken.user.status !== UserStatus.ACTIVE) {
-    throw new AuthenticationError(
+    throw new ForbiddenError(
       'Invalid user, contact admin about account status',
     );
   }
 
   if (!resetToken.user.confirmedAt) {
-    throw new AuthenticationError('Invalid user not confirmed');
+    throw new ForbiddenError('Invalid user not confirmed');
   }
 
   if (resetToken.user.deletedAt) {
-    throw new AuthenticationError('Invalid user');
+    throw new ForbiddenError('Invalid user');
   }
 
   const userRepository = connection.getRepository(User);

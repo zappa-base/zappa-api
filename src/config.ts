@@ -16,6 +16,12 @@ interface IConfig {
     isProduction: boolean;
     port: string;
   };
+  urls: {
+    admin: {
+      confirmation: string;
+      reset: string;
+    };
+  };
 }
 
 export const config: IConfig = {
@@ -44,6 +50,12 @@ export const config: IConfig = {
     isDevelopment: isDevelopment(),
     isProduction: process.env.NODE_ENV === 'production',
     port: process.env.PORT,
+  },
+  urls: {
+    admin: {
+      confirmation: process.env.ADMIN_URL_CONFIRM,
+      reset: process.env.ADMIN_URL_RESET,
+    },
   },
 };
 

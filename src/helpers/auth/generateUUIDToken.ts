@@ -1,5 +1,6 @@
-import hashjs from 'hash.js';
 import uuidv4 from 'uuid/v4';
+
+import { hashToken } from './hashToken';
 
 type ReturnType = [string, string | undefined];
 
@@ -8,10 +9,7 @@ export async function generateUUIDToken(withHash = false): Promise<ReturnType> {
   let hash: string;
 
   if (withHash) {
-    hash = hashjs
-      .sha256()
-      .update(uuid)
-      .digest('hex');
+    hash = hashToken(uuid);
   }
 
   return [uuid, hash];
