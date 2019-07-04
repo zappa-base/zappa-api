@@ -5,6 +5,7 @@ import {
 } from 'apollo-server-core';
 import { getConnection, IsNull } from 'typeorm';
 
+import { ErrorCodes } from '../../../constants/ErrorCodes';
 import { ResetToken } from '../../../db/entities/ResetToken';
 import { UserStatus } from '../../../db/entities/User';
 import { UserRepository } from '../../../db/repositories/UserRepository';
@@ -12,7 +13,7 @@ import { sendResetEmail } from '../../../emails/resetEmail';
 import { setUserResetToken } from '../../../helpers/auth/setRestConfirmToken';
 
 export async function requestReset(_obj: any, args: any) {
-  const { email } = args;
+  const { email, endpoint } = args;
 
   const connection = getConnection();
 
@@ -24,14 +25,14 @@ export async function requestReset(_obj: any, args: any) {
     throw new UserInputError('Invalid email');
   }
 
+  if (!user.confirmedAt) {
+    throw new ApolloError('Invalid user not confirmed', ErrorCodes.UNCONFIRMED);
+  }
+
   if (user.status !== UserStatus.ACTIVE) {
     throw new ForbiddenError(
       'Invalid user, contact admin about account status',
     );
-  }
-
-  if (!user.confirmedAt) {
-    throw new UserInputError('Invalid user not confirmed');
   }
 
   const resetTokenRepository = connection.getRepository(ResetToken);
@@ -54,7 +55,7 @@ export async function requestReset(_obj: any, args: any) {
   const resetToken = await setUserResetToken(connection, user);
 
   try {
-    await sendResetEmail(user, resetToken);
+    await sendResetEmail(user, resetToken, endpoint);
   } catch (error) {
     console.error(error);
     throw new ApolloError('Unable to send confirmation email');

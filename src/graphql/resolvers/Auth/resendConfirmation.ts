@@ -12,7 +12,7 @@ import { sendConfirmationEmail } from '../../../emails/confirmationEmail';
 import { setUserConfirmationToken } from '../../../helpers/auth/setUserConfirmationToken';
 
 export async function resendConfirmation(_: any, args: any) {
-  const { email } = args;
+  const { email, endpoint } = args;
 
   const connection = getConnection();
 
@@ -24,7 +24,10 @@ export async function resendConfirmation(_: any, args: any) {
     throw new UserInputError('Invalid email');
   }
 
-  if (user.status !== UserStatus.ACTIVE) {
+  if (
+    user.status === UserStatus.DELETED ||
+    user.status === UserStatus.SUSPENDED
+  ) {
     throw new ForbiddenError(
       'Invalid user, contact admin about account status',
     );
@@ -56,7 +59,7 @@ export async function resendConfirmation(_: any, args: any) {
   const confirmationToken = await setUserConfirmationToken(connection, user);
 
   try {
-    await sendConfirmationEmail(user, confirmationToken);
+    await sendConfirmationEmail(user, confirmationToken, endpoint);
   } catch (error) {
     console.error(error);
     throw new ApolloError('Unable to send confirmation email');

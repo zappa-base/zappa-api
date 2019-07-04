@@ -15,7 +15,7 @@ import { setUserConfirmationToken } from '../../../helpers/auth/setUserConfirmat
 import { signupConstraints } from '../../../helpers/validators/signupConstraints';
 
 export async function signup(_: any, args: any) {
-  const { email, password, nickname } = args;
+  const { email, endpoint, password, nickname } = args;
 
   const connection = getConnection();
 
@@ -46,7 +46,7 @@ export async function signup(_: any, args: any) {
   const confirmationToken = await setUserConfirmationToken(connection, newUser);
 
   try {
-    await sendConfirmationEmail(newUser, confirmationToken);
+    await sendConfirmationEmail(newUser, confirmationToken, endpoint);
   } catch (error) {
     console.error(error);
     throw new ApolloError('Unable to send confirmation email');

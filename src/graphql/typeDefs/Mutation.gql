@@ -2,8 +2,8 @@ type Mutation {
   authorize(token: String!): UserLogin
   confirmUser(token: String!): UserLogin
   login(email: String!, password: String!): UserLogin
-  requestReset(email: String!): Boolean
+  requestReset(email: String!, endpoint: EmailEndpoints = admin): Boolean
   resetPassword(password: String!, token: String!): UserLogin
-  resendConfirmation(email: String!): Boolean
-  signup(email: String!, password: String!, nickname: String): Boolean
+  resendConfirmation(email: String!, endpoint: EmailEndpoints = admin): Boolean
+  signup(email: String!, password: String!, nickname: String, endpoint: EmailEndpoints = admin): Boolean
 }

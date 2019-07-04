@@ -1,11 +1,15 @@
+import { EmailEndpoints } from '../constants/EmailEndpoints';
+import { EmailTemplates } from '../constants/EmailTemplates';
 import { User } from '../db/entities/User';
 
+import { getEmailLink } from './getEmailLink';
 import { getMailer } from './getMailer';
 
 export async function sendTokenEmail(
   user: User,
   token: string,
-  template: 'reset' | 'confirmation',
+  template: EmailTemplates,
+  endpoint: EmailEndpoints,
 ) {
   const email = getMailer();
 
@@ -18,9 +22,7 @@ export async function sendTokenEmail(
   try {
     await email.send({
       locals: {
-        link: `http://localhost:3000/${
-          template === 'reset' ? 'reset' : 'confirm'
-        }/${token}`,
+        link: getEmailLink(token, template, endpoint),
         nickname: user.nickname,
         token,
       },

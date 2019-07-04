@@ -1,7 +1,8 @@
-import { UserInputError } from 'apollo-server-core';
+import { ApolloError, UserInputError } from 'apollo-server-core';
 import bcrypt from 'bcrypt';
 import { getConnection } from 'typeorm';
 
+import { ErrorCodes } from '../../../constants/ErrorCodes';
 import { UserStatus } from '../../../db/entities/User';
 import { UserRepository } from '../../../db/repositories/UserRepository';
 import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
@@ -20,7 +21,7 @@ export async function login(_: any, args: any) {
   }
 
   if (!userExists.confirmedAt) {
-    throw new UserInputError('User not confirmed yet');
+    throw new ApolloError('Invalid user not confirmed', ErrorCodes.UNCONFIRMED);
   }
 
   if (userExists.status !== UserStatus.ACTIVE) {
