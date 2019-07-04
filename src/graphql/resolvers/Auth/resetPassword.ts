@@ -1,12 +1,12 @@
 import { ForbiddenError } from 'apollo-server-core';
 import bcrypt from 'bcrypt';
-import hashjs from 'hash.js';
 import { getConnection } from 'typeorm';
 
 import { config } from '../../../config';
 import { ResetToken } from '../../../db/entities/ResetToken';
 import { User, UserStatus } from '../../../db/entities/User';
 import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
+import { hashToken } from '../../../helpers/auth/hashToken';
 
 export async function resetPassword(_: any, args: any) {
   const { token, password } = args;
@@ -17,10 +17,7 @@ export async function resetPassword(_: any, args: any) {
 
   const resetToken = await resetTokenRepository.findOne(
     {
-      token: hashjs
-        .sha256()
-        .update(token)
-        .digest('hex'),
+      token: hashToken(token),
     },
     { relations: ['user'] },
   );

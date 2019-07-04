@@ -1,10 +1,10 @@
 import { ForbiddenError, UserInputError } from 'apollo-server-core';
-import hashjs from 'hash.js';
 import { getConnection } from 'typeorm';
 
 import { ConfirmationToken } from '../../../db/entities/ConfirmationToken';
 import { User, UserStatus } from '../../../db/entities/User';
 import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
+import { hashToken } from '../../../helpers/auth/hashToken';
 
 export async function confirmUser(_: any, args: any) {
   const { token } = args;
@@ -17,10 +17,7 @@ export async function confirmUser(_: any, args: any) {
 
   const confirmationToken = await confirmationTokenRepository.findOne(
     {
-      token: hashjs
-        .sha256()
-        .update(token)
-        .digest('hex'),
+      token: hashToken(token),
     },
     { relations: ['user'] },
   );
