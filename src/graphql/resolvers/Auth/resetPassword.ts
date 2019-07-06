@@ -1,12 +1,14 @@
-import { ForbiddenError } from 'apollo-server-core';
+import { ForbiddenError, UserInputError } from 'apollo-server-core';
 import bcrypt from 'bcrypt';
 import { getConnection } from 'typeorm';
+import validate from 'validate.js';
 
 import { config } from '../../../config';
 import { ResetToken } from '../../../db/entities/ResetToken';
 import { User, UserStatus } from '../../../db/entities/User';
 import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
 import { hashToken } from '../../../helpers/auth/hashToken';
+import { resetPasswordConstraints } from '../../../helpers/validators/resetPasswordConstraints';
 
 export async function resetPassword(_: any, args: any) {
   const { token, password } = args;
@@ -47,6 +49,14 @@ export async function resetPassword(_: any, args: any) {
 
   if (resetToken.user.deletedAt) {
     throw new ForbiddenError('Invalid user');
+  }
+
+  const errors = validate(args, resetPasswordConstraints);
+
+  if (errors) {
+    throw new UserInputError('Invalid User input', {
+      inputErrors: errors,
+    });
   }
 
   const userRepository = connection.getRepository(User);

@@ -1,3 +1,5 @@
+import { passwordConstraints } from './passwordConstraints';
+
 export const signupConstraints = {
   email: {
     email: true,
@@ -9,11 +11,5 @@ export const signupConstraints = {
     },
     presence: true,
   },
-  password: {
-    length: {
-      message: 'must be at least 6 characters',
-      minimum: 6,
-    },
-    presence: true,
-  },
+  password: passwordConstraints,
 };
