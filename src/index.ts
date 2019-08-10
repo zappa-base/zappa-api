@@ -28,7 +28,11 @@ async function startServer() {
     }
   });
 
-  await createDBConnection();
+  try {
+    await createDBConnection();
+  } catch (error) {
+    throw new Error(error);
+  }
 
   const server = createApollo();
 
@@ -41,4 +45,4 @@ async function startServer() {
   });
 }
 
-startServer();
+startServer().catch((error) => console.error(error));
