@@ -1,0 +1,15 @@
+type Album {
+  id: String
+
+  # Columns
+  catalogNumber: String
+  label: String
+  releaseDate: String
+  title: String
+
+  coverArtUrl: String
+
+  # Meta
+  createdAt: String
+  updatedAt: String
+}

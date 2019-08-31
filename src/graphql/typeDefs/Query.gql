@@ -1,4 +1,5 @@
 type Query {
+  albums: [Album]
   users: [User]
   currentUser: User
 }
