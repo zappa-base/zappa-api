@@ -1,12 +1,13 @@
-import { getConnection, getRepository } from 'typeorm';
+import { getConnection } from 'typeorm';
 
-import { Album } from '../../db/entities/Album';
 import { User } from '../../db/entities/User';
 
+import { album, albums } from './Album';
 import { currentUser } from './Auth/currentUser';
 
 export const Query = {
-  albums: async () => await getRepository(Album).find(),
+  album,
+  albums,
   currentUser,
   users: async () =>
     getConnection()

@@ -13,3 +13,22 @@ type Album {
   createdAt: String
   updatedAt: String
 }
+
+input AlbumInput {
+  catalogNumber: String
+  coverArtUrl: String
+  label: String
+  releaseDate: String
+  title: String
+}
+
+extend type Query {
+  albums: [Album]
+  album(id: String!): Album
+}
+
+extend type Mutation {
+  createAlbum(input: AlbumInput!): Album!
+  updateAlbum(id: String!, input: AlbumInput!): Album!
+  deleteAlbum(id: String!): Album!
+}
