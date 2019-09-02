@@ -3,7 +3,7 @@ import {
   ForbiddenError,
   UserInputError,
 } from 'apollo-server-core';
-import { getConnection, IsNull } from 'typeorm';
+import { getCustomRepository, getRepository, IsNull } from 'typeorm';
 
 import { ErrorCodes } from '../../../constants/ErrorCodes';
 import { ResetToken } from '../../../db/entities/ResetToken';
@@ -15,9 +15,7 @@ import { setUserResetToken } from '../../../helpers/auth/setRestConfirmToken';
 export async function requestReset(_obj: any, args: any) {
   const { email, endpoint } = args;
 
-  const connection = getConnection();
-
-  const userRepository = connection.getCustomRepository(UserRepository);
+  const userRepository = getCustomRepository(UserRepository);
 
   const user = await userRepository.findByEmail(email);
 
@@ -35,7 +33,7 @@ export async function requestReset(_obj: any, args: any) {
     );
   }
 
-  const resetTokenRepository = connection.getRepository(ResetToken);
+  const resetTokenRepository = getRepository(ResetToken);
 
   const resetTokens = await resetTokenRepository.find({
     deletedAt: IsNull(),
@@ -52,7 +50,7 @@ export async function requestReset(_obj: any, args: any) {
     await resetTokenRepository.save(resetTokens);
   }
 
-  const resetToken = await setUserResetToken(connection, user);
+  const resetToken = await setUserResetToken(user);
 
   try {
     await sendResetEmail(user, resetToken, endpoint);

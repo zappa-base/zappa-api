@@ -1,6 +1,6 @@
 import { ForbiddenError, UserInputError } from 'apollo-server-core';
 import bcrypt from 'bcrypt';
-import { getConnection } from 'typeorm';
+import { getRepository } from 'typeorm';
 import validate from 'validate.js';
 
 import { config } from '../../../config';
@@ -13,9 +13,7 @@ import { resetPasswordConstraints } from '../../../helpers/validators/resetPassw
 export async function resetPassword(_: any, args: any) {
   const { token, password } = args;
 
-  const connection = getConnection();
-
-  const resetTokenRepository = connection.getRepository(ResetToken);
+  const resetTokenRepository = getRepository(ResetToken);
 
   const resetToken = await resetTokenRepository.findOne(
     {
@@ -59,7 +57,7 @@ export async function resetPassword(_: any, args: any) {
     });
   }
 
-  const userRepository = connection.getRepository(User);
+  const userRepository = getRepository(User);
 
   resetToken.user.password = await bcrypt.hash(
     password,

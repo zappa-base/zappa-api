@@ -3,7 +3,7 @@ import {
   ForbiddenError,
   UserInputError,
 } from 'apollo-server-core';
-import { getConnection, IsNull } from 'typeorm';
+import { getCustomRepository, getRepository, IsNull } from 'typeorm';
 
 import { ConfirmationToken } from '../../../db/entities/ConfirmationToken';
 import { UserStatus } from '../../../db/entities/User';
@@ -14,9 +14,7 @@ import { setUserConfirmationToken } from '../../../helpers/auth/setUserConfirmat
 export async function resendConfirmation(_: any, args: any) {
   const { email, endpoint } = args;
 
-  const connection = getConnection();
-
-  const userRepository = connection.getCustomRepository(UserRepository);
+  const userRepository = getCustomRepository(UserRepository);
 
   const user = await userRepository.findByEmail(email);
 
@@ -37,9 +35,7 @@ export async function resendConfirmation(_: any, args: any) {
     throw new UserInputError('User already confirmed');
   }
 
-  const confirmationTokenRepository = connection.getRepository(
-    ConfirmationToken,
-  );
+  const confirmationTokenRepository = getRepository(ConfirmationToken);
 
   const confirmationTokens = await confirmationTokenRepository.find({
     confirmedAt: IsNull(),
@@ -56,7 +52,7 @@ export async function resendConfirmation(_: any, args: any) {
     await confirmationTokenRepository.save(confirmationTokens);
   }
 
-  const confirmationToken = await setUserConfirmationToken(connection, user);
+  const confirmationToken = await setUserConfirmationToken(user);
 
   try {
     await sendConfirmationEmail(user, confirmationToken, endpoint);

@@ -1,6 +1,6 @@
 import { ApolloError, UserInputError } from 'apollo-server-core';
 import bcrypt from 'bcrypt';
-import { getConnection } from 'typeorm';
+import { getCustomRepository } from 'typeorm';
 
 import { ErrorCodes } from '../../../constants/ErrorCodes';
 import { UserStatus } from '../../../db/entities/User';
@@ -10,9 +10,7 @@ import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
 export async function login(_: any, args: any) {
   const { email, password } = args;
 
-  const connection = getConnection();
-
-  const userRepository = connection.getCustomRepository(UserRepository);
+  const userRepository = getCustomRepository(UserRepository);
 
   const userExists = await userRepository.findByEmail(email);
 

@@ -1,17 +1,12 @@
-import { Connection } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import { ConfirmationToken } from '../../db/entities/ConfirmationToken';
 import { User } from '../../db/entities/User';
 
 import { generateUUIDToken } from './generateUUIDToken';
 
-export async function setUserConfirmationToken(
-  connection: Connection,
-  user: User,
-) {
-  const confirmationTokenRepository = connection.getRepository(
-    ConfirmationToken,
-  );
+export async function setUserConfirmationToken(user: User) {
+  const confirmationTokenRepository = getRepository(ConfirmationToken);
 
   const confirmationTokenRow = new ConfirmationToken();
 

@@ -1,4 +1,4 @@
-import { getConnection } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import { User } from '../../db/entities/User';
 
@@ -9,8 +9,5 @@ export const Query = {
   album,
   albums,
   currentUser,
-  users: async () =>
-    getConnection()
-      .getRepository(User)
-      .find(),
+  users: async () => getRepository(User).find(),
 };
