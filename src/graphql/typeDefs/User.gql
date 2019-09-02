@@ -1,6 +1,12 @@
-type User {
+type User implements BaseModel {
+  # BaseModel
+  id: ID
+  createdAt: DateTime
+  updatedAt: DateTime
+  deletedAt: DateTime
+
+  # Model Specific
   email: String
-  id: String
   nickname: String
   role: UserRole
 }

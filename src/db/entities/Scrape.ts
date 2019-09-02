@@ -1,10 +1,6 @@
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+
+import { Base } from './Base';
 
 export enum ScrapeStatus {
   PENDING = 'pending',
@@ -12,7 +8,7 @@ export enum ScrapeStatus {
   COMPLETED = 'completed',
 }
 @Entity()
-export class Scrape {
+export class Scrape extends Base {
   @PrimaryGeneratedColumn('uuid')
   public id: string;
 
@@ -31,13 +27,4 @@ export class Scrape {
     type: 'enum',
   })
   public status: ScrapeStatus;
-
-  @Column({ nullable: true })
-  public deletedAt: Date;
-
-  @CreateDateColumn()
-  public createdAt: Date;
-
-  @UpdateDateColumn()
-  public updatedAt: Date;
 }

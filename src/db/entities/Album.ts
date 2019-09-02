@@ -1,13 +1,9 @@
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+
+import { Base } from './Base';
 
 @Entity()
-export class Album {
+export class Album extends Base {
   @PrimaryGeneratedColumn('uuid')
   public id: string;
 
@@ -25,10 +21,4 @@ export class Album {
 
   @Column({ nullable: true })
   public coverArtUrl: string;
-
-  @CreateDateColumn()
-  public createdAt: Date;
-
-  @UpdateDateColumn()
-  public updatedAt: Date;
 }

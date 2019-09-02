@@ -1,16 +1,10 @@
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
+import { Base } from './Base';
 import { User } from './User';
 
 @Entity()
-export class ResetToken {
+export class ResetToken extends Base {
   @PrimaryGeneratedColumn('uuid')
   public id: string;
 
@@ -21,16 +15,7 @@ export class ResetToken {
   public resetAt: Date;
 
   @Column({ nullable: true })
-  public deletedAt: Date;
-
-  @Column({ nullable: true })
   public invalidatedAt: Date;
-
-  @CreateDateColumn()
-  public createdAt: Date;
-
-  @UpdateDateColumn()
-  public updatedAt: Date;
 
   @ManyToOne(() => User, (user) => user.resetTokens, {
     cascade: true,

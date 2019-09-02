@@ -2,14 +2,13 @@ import {
   BeforeInsert,
   BeforeUpdate,
   Column,
-  CreateDateColumn,
   Entity,
   Index,
   OneToMany,
   PrimaryGeneratedColumn,
-  UpdateDateColumn,
 } from 'typeorm';
 
+import { Base } from './Base';
 import { ConfirmationToken } from './ConfirmationToken';
 import { ResetToken } from './ResetToken';
 
@@ -27,7 +26,7 @@ export enum UserRole {
 }
 
 @Entity()
-export class User {
+export class User extends Base {
   @PrimaryGeneratedColumn('uuid')
   public id: string;
 
@@ -57,15 +56,6 @@ export class User {
 
   @Column({ nullable: true })
   public confirmedAt: Date;
-
-  @Column({ nullable: true })
-  public deletedAt: Date;
-
-  @CreateDateColumn()
-  public createdAt: Date;
-
-  @UpdateDateColumn()
-  public updatedAt: Date;
 
   @OneToMany(
     () => ConfirmationToken,

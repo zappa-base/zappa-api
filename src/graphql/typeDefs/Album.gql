@@ -1,17 +1,17 @@
-type Album {
-  id: String
+type Album implements BaseModel  {
+  # BaseModel
+  id: ID
+  createdAt: DateTime
+  updatedAt: DateTime
+  deletedAt: DateTime
 
-  # Columns
+  # Model Specific
   catalogNumber: String
   label: String
   releaseDate: String
   title: String
 
   coverArtUrl: String
-
-  # Meta
-  createdAt: String
-  updatedAt: String
 }
 
 input AlbumInput {
