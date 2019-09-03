@@ -145,9 +145,9 @@
   dependencies:
     "@types/node" "*"
 
-"@types/email-templates@^3.5.1":
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/@types/email-templates/-/email-templates-3.5.1.tgz#cb00dea2aff8fdfe7a2d8f30df428e221bcd1457"
+"@types/email-templates@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@types/email-templates/-/email-templates-6.0.0.tgz#9caf4b8b2e1982988c562fc09f7e70429fd15f02"
 
 "@types/events@*":
   version "3.0.0"
