@@ -1,0 +1,40 @@
+type PaginationInfo {
+
+  """
+  Current Limit
+  """
+  limit: Int!
+
+  """
+  Current Offset
+  """
+  offset: Int!
+
+  """
+  Current Page
+  """
+  page: Int!
+
+  """
+  Sorting Column
+  """
+  sortBy: String
+
+  """
+  Sorting Direction ASC or DESC
+  """
+  sortDirection: SortDirection
+
+  """
+  Total items
+  """
+  total: Int!
+}
+
+input PaginationInput {
+  page: Int = 1
+  limit: Int = 10
+  search: String
+  sortBy: String
+  sortDirection: SortDirection
+}

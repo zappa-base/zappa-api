@@ -10,3 +10,15 @@ type User implements BaseModel {
   nickname: String
   role: UserRole
 }
+
+type UserResults {
+  pagination: PaginationInfo
+  results: [User]
+}
+
+type Query {
+  """
+  List of Users
+  """
+  users(input: PaginationInput): UserResults
+}

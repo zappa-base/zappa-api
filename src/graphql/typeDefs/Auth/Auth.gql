@@ -1,0 +1,43 @@
+type Query {
+  """
+  Returns user information from JWT in header
+  """
+  currentUser: User
+}
+
+type Mutation {
+  """
+  Use to re-sign a non-expired JWT Token
+  """
+  authorize(token: String!): UserLogin
+
+  """
+  Used to confirm a user using the confirmation token assigned to the user
+  """
+  confirmUser(token: String!): UserLogin
+  
+  """
+  Login endpoint that uses email/password to receive a JWT Token
+  """
+  login(email: String!, password: String!): UserLogin
+  
+  """
+  Request a password reset, needs the targeted `endpoint` to generate the URL.
+  """
+  requestReset(email: String!, endpoint: EmailEndpoints = admin): Boolean
+
+  """
+  Resets password for the user associated with the passed in token with the supplied password
+  """
+  resetPassword(password: String!, token: String!): UserLogin
+
+  """
+  Resend confirmation email, with new token, if user hasn't been confirmed
+  """
+  resendConfirmation(email: String!, endpoint: EmailEndpoints = admin): Boolean
+
+  """
+  New user sign-up endpoint, sends confirmation email after successful sign up.
+  """
+  signup(email: String!, password: String!, nickname: String, endpoint: EmailEndpoints = admin): Boolean
+}
