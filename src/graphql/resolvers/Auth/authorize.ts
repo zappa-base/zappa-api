@@ -1,6 +1,6 @@
 import { ForbiddenError } from 'apollo-server-core';
 import { verify } from 'jsonwebtoken';
-import { getConnection } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import { config } from '../../../config';
 import { User, UserStatus } from '../../../db//entities/User';
@@ -24,9 +24,7 @@ export async function authorize(_: any, args: any) {
 
   const id = decoded.id;
 
-  const connection = getConnection();
-
-  const userRepository = connection.getRepository(User);
+  const userRepository = getRepository(User);
 
   const userExists = await userRepository.findOne(id);
 

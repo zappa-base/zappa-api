@@ -4,7 +4,7 @@ import {
   UserInputError,
 } from 'apollo-server-core';
 import bcrypt from 'bcrypt';
-import { getConnection } from 'typeorm';
+import { getCustomRepository } from 'typeorm';
 import validate from 'validate.js';
 
 import { config } from '../../../config';
@@ -17,9 +17,7 @@ import { signupConstraints } from '../../../helpers/validators/signupConstraints
 export async function signup(_: any, args: any) {
   const { email, endpoint, password, nickname } = args;
 
-  const connection = getConnection();
-
-  const userRepository = connection.getCustomRepository(UserRepository);
+  const userRepository = getCustomRepository(UserRepository);
 
   const userExists = await userRepository.findByEmail(email);
 
@@ -43,7 +41,7 @@ export async function signup(_: any, args: any) {
 
   const newUser = await userRepository.save(user);
 
-  const confirmationToken = await setUserConfirmationToken(connection, newUser);
+  const confirmationToken = await setUserConfirmationToken(newUser);
 
   try {
     await sendConfirmationEmail(newUser, confirmationToken, endpoint);

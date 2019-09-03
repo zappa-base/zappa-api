@@ -1,5 +1,5 @@
 import { ForbiddenError, UserInputError } from 'apollo-server-core';
-import { getConnection } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import { ConfirmationToken } from '../../../db/entities/ConfirmationToken';
 import { User, UserStatus } from '../../../db/entities/User';
@@ -9,11 +9,7 @@ import { hashToken } from '../../../helpers/auth/hashToken';
 export async function confirmUser(_: any, args: any) {
   const { token } = args;
 
-  const connection = getConnection();
-
-  const confirmationTokenRepository = connection.getRepository(
-    ConfirmationToken,
-  );
+  const confirmationTokenRepository = getRepository(ConfirmationToken);
 
   const confirmationToken = await confirmationTokenRepository.findOne(
     {
@@ -55,7 +51,7 @@ export async function confirmUser(_: any, args: any) {
     throw new ForbiddenError('User already confirmed');
   }
 
-  const userRepository = connection.getRepository(User);
+  const userRepository = getRepository(User);
 
   confirmationToken.user.confirmedAt = new Date();
   confirmationToken.user.status = UserStatus.ACTIVE;

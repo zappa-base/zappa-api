@@ -1,0 +1,6 @@
+interface BaseModel {
+  id: ID
+  createdAt: DateTime
+  updatedAt: DateTime
+  deletedAt: DateTime
+}

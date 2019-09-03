@@ -10,5 +10,6 @@ export function createApollo() {
     introspection: true,
     playground: true,
     schema,
+    tracing: true,
   });
 }

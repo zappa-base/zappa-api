@@ -1,0 +1,24 @@
+type User implements BaseModel {
+  # BaseModel
+  id: ID
+  createdAt: DateTime
+  updatedAt: DateTime
+  deletedAt: DateTime
+
+  # Model Specific
+  email: String
+  nickname: String
+  role: UserRole
+}
+
+type UserResults {
+  pagination: PaginationInfo
+  results: [User]
+}
+
+type Query {
+  """
+  List of Users
+  """
+  users(input: PaginationInput): UserResults
+}

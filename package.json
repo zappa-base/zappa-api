@@ -19,8 +19,10 @@
     "express": "^4.17.1",
     "express-jwt": "^5.3.1",
     "graphql": "^14.3.1",
+    "graphql-iso-date": "^3.6.1",
     "graphql-scraper": "^1.2.1",
     "graphql-tools": "^4.0.4",
+    "graphql-type-json": "^0.3.0",
     "hash.js": "^1.1.7",
     "jsonwebtoken": "^8.5.1",
     "merge-graphql-schemas": "^1.5.8",
@@ -56,6 +58,7 @@
     "ts-node": "^8.2.0",
     "tslint": "^5.16.0",
     "tslint-plugin-prettier": "^2.0.1",
+    "typedoc": "^0.15.0",
     "typescript": "^3.4.5"
   },
   "scripts": {
@@ -75,12 +78,14 @@
     "dev:scraper": "ts-node src/graphql/scraper/index.ts",
     "dev:server": "nodemon",
     "dev": "npm run dev:server",
+    "docs": "typedoc --out docs src",
+    "docs:extra": "touch docs/.nojekyll",
     "heroku-postbuild": "npm run build:all",
     "start:debug": "node --inspect dist/index.js",
     "start": "node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "echo \"Error: no test specified\"",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
-    "typeorm": "ts-node ./node_modules/.bin/typeorm"
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js"
   },
   "resolutions": {
     "graphql": "^14.3.1",

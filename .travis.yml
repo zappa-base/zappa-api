@@ -5,3 +5,16 @@ branches:
   only: 
     - master
     - /^greenkeeper/.*$/
+script:
+  - yarn build
+  - yarn docs
+  - yarn docs:extra
+
+deploy:
+  local_dir: docs
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
