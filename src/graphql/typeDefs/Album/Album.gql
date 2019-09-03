@@ -8,7 +8,7 @@ type Album implements BaseModel  {
   # Model Specific
   catalogNumber: String
   label: String
-  releaseDate: String
+  releaseDate: Date
   title: String
 
   coverArtUrl: String
@@ -18,17 +18,40 @@ input AlbumInput {
   catalogNumber: String
   coverArtUrl: String
   label: String
-  releaseDate: String
+  releaseDate: Date
   title: String
 }
 
-extend type Query {
-  albums: [Album]
+type AlbumResults {
+  pagination: PaginationInfo
+  results: [Album]
+}
+
+type Query {
+  """
+  List of `Album`s
+  """
+  albums(input: PaginationInput): AlbumResults
+
+  """
+  Album by the `UUID`
+  """
   album(id: String!): Album
 }
 
-extend type Mutation {
+type Mutation {
+  """
+  Create a new `Album`
+  """
   createAlbum(input: AlbumInput!): Album!
+
+  """
+  Update a current `Album` using its `UUID`
+  """
   updateAlbum(id: String!, input: AlbumInput!): Album!
+
+  """
+  Update a current `Album` using its `UUID`
+  """
   deleteAlbum(id: String!): Album!
 }
