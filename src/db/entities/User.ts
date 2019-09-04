@@ -20,6 +20,7 @@ export enum UserStatus {
 }
 
 export enum UserRole {
+  GOD = 'god',
   ADMIN = 'admin',
   MODERATOR = 'moderator',
   USER = 'user',

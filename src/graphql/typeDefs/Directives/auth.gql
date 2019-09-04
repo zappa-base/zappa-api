@@ -1,0 +1,1 @@
+directive @auth(requires: UserRole = admin) on FIELD_DEFINITION

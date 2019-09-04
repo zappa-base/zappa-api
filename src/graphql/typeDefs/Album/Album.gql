@@ -43,15 +43,15 @@ type Mutation {
   """
   Create a new `Album`
   """
-  createAlbum(input: AlbumInput!): Album!
+  createAlbum(input: AlbumInput!): Album! @auth(requires: admin)
 
   """
   Update a current `Album` using its `UUID`
   """
-  updateAlbum(id: String!, input: AlbumInput!): Album!
+  updateAlbum(id: String!, input: AlbumInput!): Album! @auth(requires: admin)
 
   """
   Update a current `Album` using its `UUID`
   """
-  deleteAlbum(id: String!): Album!
+  deleteAlbum(id: String!): Album! @auth(requires: admin)
 }
