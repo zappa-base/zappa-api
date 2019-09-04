@@ -2,20 +2,7 @@ import { ForbiddenError } from 'apollo-server-core';
 import { defaultFieldResolver } from 'graphql';
 import { SchemaDirectiveVisitor } from 'graphql-tools';
 
-import { UserRole } from '../../db/entities/User';
-
-function getRoleLevel(role: UserRole) {
-  switch (role) {
-    case UserRole.GOD:
-      return 4;
-    case UserRole.ADMIN:
-      return 3;
-    case UserRole.MODERATOR:
-      return 2;
-    default:
-      return 1;
-  }
-}
+import { getRoleLevel } from '../../helpers/auth/getRoleLevel';
 
 export class AuthDirective extends SchemaDirectiveVisitor {
   public visitFieldDefinition(field: any) {
