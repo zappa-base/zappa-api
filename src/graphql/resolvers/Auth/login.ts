@@ -34,7 +34,7 @@ export async function login(_: any, args: any) {
     throw new UserInputError('Invalid email or password');
   }
 
-  const token = generateJWTToken(userExists);
+  const token = await generateJWTToken(userExists);
 
   return {
     token,

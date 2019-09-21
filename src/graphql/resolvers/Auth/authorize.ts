@@ -38,7 +38,7 @@ export async function authorize(_: any, args: any) {
     );
   }
 
-  const newtoken = generateJWTToken(userExists);
+  const newtoken = await generateJWTToken(userExists, decoded.pid);
 
   return {
     token: newtoken,

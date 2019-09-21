@@ -11,6 +11,7 @@ import {
 import { Base } from './Base';
 import { ConfirmationToken } from './ConfirmationToken';
 import { ResetToken } from './ResetToken';
+import { Session } from './Session';
 
 export enum UserStatus {
   ACTIVE = 'active',
@@ -66,6 +67,9 @@ export class User extends Base {
 
   @OneToMany(() => ResetToken, (resetToken) => resetToken.user)
   public resetTokens: ResetToken[];
+
+  @OneToMany(() => Session, (session) => session.user)
+  public sessions: Session[];
 
   @BeforeInsert()
   @BeforeUpdate()

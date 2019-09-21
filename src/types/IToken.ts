@@ -3,6 +3,7 @@ export interface IToken {
   exp: number;
   iat: number;
   id: string;
+  pid: string;
   nickname: string;
   role: string;
 }

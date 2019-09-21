@@ -60,7 +60,7 @@ export async function confirmUser(_: any, args: any) {
   await userRepository.save(confirmationToken.user);
   await confirmationTokenRepository.save(confirmationToken);
 
-  const newtoken = generateJWTToken(confirmationToken.user);
+  const newtoken = await generateJWTToken(confirmationToken.user);
 
   return {
     token: newtoken,

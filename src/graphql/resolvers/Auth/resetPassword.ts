@@ -6,6 +6,7 @@ import validate from 'validate.js';
 import { config } from '../../../config';
 import { ResetToken } from '../../../db/entities/ResetToken';
 import { User, UserStatus } from '../../../db/entities/User';
+import { deleteUserSessions } from '../../../helpers/auth/deleteUserSessions';
 import { generateJWTToken } from '../../../helpers/auth/generateJWTToken';
 import { hashToken } from '../../../helpers/auth/hashToken';
 import { resetPasswordConstraints } from '../../../helpers/validators/resetPasswordConstraints';
@@ -58,6 +59,8 @@ export async function resetPassword(_: any, args: any) {
   }
 
   const userRepository = getRepository(User);
+
+  await deleteUserSessions(resetToken.user.id);
 
   resetToken.user.password = await bcrypt.hash(
     password,
