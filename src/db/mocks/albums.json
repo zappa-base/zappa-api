@@ -1,0 +1,597 @@
+[
+  {
+    "title": "Freak Out!",
+    "releaseDate": "Jun 27th 1966",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/01_FreakOut-cover.jpg?itok=ySulY4If"
+  },
+  {
+    "title": "Absolutely Free",
+    "releaseDate": "May 26th 1967",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/02_ABSOLUTELYFREE_cover.jpg?itok=qm2bs6nb"
+  },
+  {
+    "title": "We're Only In It For The Money",
+    "releaseDate": "Mar 4th 1968",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/04_WOIIFTM_cover.jpg?itok=yZg_v7Ev"
+  },
+  {
+    "title": "Lumpy Gravy",
+    "releaseDate": "May 13th 1968",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/03_LumpyGravy_cover.jpg?itok=Ss02t8sG"
+  },
+  {
+    "title": "Cruising With Ruben & The Jets",
+    "releaseDate": "Dec 2nd 1968",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/05_CRUSING-WITH-RUBEN_cover.jpg?itok=8dRDUHMs"
+  },
+  {
+    "title": "Mothermania",
+    "releaseDate": "Mar 24th 1969",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/07_MOTHERMANIA.jpg?itok=TDhUlc84"
+  },
+  {
+    "title": "Uncle Meat",
+    "releaseDate": "Apr 21st 1969",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/68f296e698d65d3366cc055756573678e45eb043.jpg?itok=Yz86x8s9"
+  },
+  {
+    "title": "Hot Rats",
+    "releaseDate": "Oct 10th 1969",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/08_HOTRATS-cover.jpg?itok=a6vtYt2u"
+  },
+  {
+    "title": "Burnt Weeny Sandwich",
+    "releaseDate": "Feb 9th 1970",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/09_BURNT-WEENY-cover.jpg?itok=NrR-HHia"
+  },
+  {
+    "title": "Weasels Ripped My Flesh",
+    "releaseDate": "Aug 10th 1970",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/10_WRMF_cover.jpg?itok=AJjsiAEw"
+  },
+  {
+    "title": "Chunga's Revenge",
+    "releaseDate": "Oct 23rd 1970",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/11_CHUNGAS-cover.png?itok=FrusCKZT"
+  },
+  {
+    "title": "Fillmore East - June 1971",
+    "releaseDate": "Aug 2nd 1971",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/64c7608a0b3a102462f5c1b30cce5c61df374596.jpg?itok=wPiRJla2"
+  },
+  {
+    "title": "200 Motels",
+    "releaseDate": "Oct 4th 1971",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/13_200Motels.jpg?itok=1wXhQsrl"
+  },
+  {
+    "title": "Just Another Band From L.A.",
+    "releaseDate": "Mar 26th 1972",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/14_JABFLA_cover.jpg?itok=iR1brv6y"
+  },
+  {
+    "title": "Waka/Jawaka",
+    "releaseDate": "Jul 5th 1972",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/15_WAKAJawaka_1500.jpg?itok=llWyjK3N"
+  },
+  {
+    "title": "The Grand Wazoo",
+    "releaseDate": "Nov 27th 1972",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/16_GrandWazoo.jpg?itok=qCC3QzMf"
+  },
+  {
+    "title": "Over-Nite Sensation",
+    "releaseDate": "Sep 7th 1973",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/17_OVER-NITE_5x5.jpg?itok=1l2wF5LP"
+  },
+  {
+    "title": "Apostrophe(')",
+    "releaseDate": "Mar 22nd 1974",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/795bd46fd5617b549ace572c1f5e8dc4a93983b2.jpg?itok=txUzzcTs"
+  },
+  {
+    "title": "Roxy & Elsewhere",
+    "releaseDate": "Sep 10th 1974",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/19_Roxy%26Elsewhere_cover.jpg?itok=I60w0mh7"
+  },
+  {
+    "title": "One Size Fits All",
+    "releaseDate": "Jun 25th 1975",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/20_ONESIZEFITSALL_cover.jpg?itok=qENheAd0"
+  },
+  {
+    "title": "Bongo Fury",
+    "releaseDate": "Oct 2nd 1975",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/21_BONGOFURY_cover.jpg?itok=qVVBYsbN"
+  },
+  {
+    "title": "Zoot Allures",
+    "releaseDate": "Oct 20th 1976",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/22_ZOOT-cover.jpg?itok=ADEaxu-S"
+  },
+  {
+    "title": "Zappa In New York",
+    "releaseDate": "Mar 3rd 1978",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/23_ZappaInNewYork_cover.jpg?itok=y--WqTvV"
+  },
+  {
+    "title": "Studio Tan",
+    "releaseDate": "Sep 15th 1978",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/24_STUDIOTAN-cover.jpg?itok=llOECvms"
+  },
+  {
+    "title": "Sleep Dirt",
+    "releaseDate": "Jan 19th 1979",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/25_SLEEP-DIRT-cover.jpg?itok=I-N3G9cy"
+  },
+  {
+    "title": "Sheik Yerbouti",
+    "releaseDate": "Mar 3rd 1979",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/26_SheikYerbouti_cover.jpg?itok=Iue8D6Dw"
+  },
+  {
+    "title": "Orchestral Favorites",
+    "releaseDate": "May 4th 1979",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/27_ORCHESTRAL-cover.png?itok=QsczGqAK"
+  },
+  {
+    "title": "Joe's Garage Act I",
+    "releaseDate": "Sep 17th 1979",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201607/28_JOE%27S-GARAGE_Act-I-Origcover.jpg?itok=dGGjxVth"
+  },
+  {
+    "title": "Joe's Garage Act II & III",
+    "releaseDate": "Nov 19th 1979",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201607/29_JoesGarage23_origcover.jpg?itok=J1BFn-7r"
+  },
+  {
+    "title": "Shut Up 'N Play Yer Guitar",
+    "releaseDate": "May 11th 1981",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201607/31_SUAPYG.jpg?itok=i_oYp0-M"
+  },
+  {
+    "title": "Shut Up 'N Play Yer Guitar Some More",
+    "releaseDate": "May 11th 1981",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201607/32_SUAPYGSM.jpg?itok=UTlCUaN-"
+  },
+  {
+    "title": "Return Of The Son Of Shut Up 'n Play Yer Guitar",
+    "releaseDate": "May 11th 1981",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201607/33_ROTSOSUAPYG.jpg?itok=SjU-fhVX"
+  },
+  {
+    "title": "Tinseltown Rebellion",
+    "releaseDate": "May 11th 1981",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/30_TINSELTOWN-REBELLION_cover5x5.jpg?itok=0TW8b3Hs"
+  },
+  {
+    "title": "Shut Up 'n Play Yer Guitar (3 Record Set)",
+    "releaseDate": "May 11th 1981",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/cd8d16f52e53e3e2f3b10229af01efe8346fc4df.jpg?itok=dQ3GQb2Y"
+  },
+  {
+    "title": "You Are What You Is",
+    "releaseDate": "Sep 23rd 1981",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/cb1c261a31b9e4a2ebf3a2ecaad23febff443bd4.jpg?itok=wbO1qHIh"
+  },
+  {
+    "title": "Ship Arriving Too Late To Save A Drowning Witch",
+    "releaseDate": "May 3rd 1982",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/35_SATLTSADW-cover.png?itok=fCLtJD4m"
+  },
+  {
+    "title": "Baby Snakes",
+    "releaseDate": "Mar 28th 1983",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/37_BabySnakes_cover.jpg?itok=HR6ZLJsE"
+  },
+  {
+    "title": "The Man From Utopia",
+    "releaseDate": "Mar 28th 1983",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/36_ManFromUtopia_cover_1500.jpg?itok=KwgmvnPx"
+  },
+  {
+    "title": "London Symphony Orchestra, Vol I",
+    "releaseDate": "Jun 9th 1983",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201607/38_LSO_I-cover.png?itok=ssy7tzc3"
+  },
+  {
+    "title": "Boulez Conducts Zappa: The Perfect Stranger",
+    "releaseDate": "Aug 23rd 1984",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/bca2165260b4a349e8415a5fdebb109f6a2c519f.jpg?itok=AKU-IaLz"
+  },
+  {
+    "title": "Them Or Us",
+    "releaseDate": "Oct 18th 1984",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/402ae063efd060ac513db7512d881b54a5f74e1a.jpg?itok=JQYQJ63J"
+  },
+  {
+    "title": "Francesco Zappa",
+    "releaseDate": "Nov 21st 1984",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/a5c148ba5a2c43a1b8234829059038a638b11923.jpg?itok=_GrikNYm"
+  },
+  {
+    "title": "Thing-Fish",
+    "releaseDate": "Dec 21st 1984",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/223fe12906cb2babe3d9ac8ecbac1886f1c69f5c.jpg?itok=GtCxQaeF"
+  },
+  {
+    "title": "The Old Masters, Box One",
+    "releaseDate": "Apr 1st 1985",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201607/43-Old-Masters-1-cover.jpg?itok=t916pF9u"
+  },
+  {
+    "title": "Frank Zappa Meets The Mothers Of Prevention",
+    "releaseDate": "Nov 21st 1985",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/10f728583c40ede2dd7b6f701b5dfb7948220fe0.jpg?itok=Da3rQit3"
+  },
+  {
+    "title": "Does Humor Belong In Music? (Live)",
+    "releaseDate": "Jan 27th 1986",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/45_DHBIM.jpg?itok=LeDH3mAq"
+  },
+  {
+    "title": "The Old Masters, Box Two",
+    "releaseDate": "Nov 1st 1986",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201607/46-Old-Masters-2-cover.jpg?itok=ldUcRXX1"
+  },
+  {
+    "title": "Jazz From Hell",
+    "releaseDate": "Nov 15th 1986",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/47_JazzFromHell-cover.jpg?itok=oZiPbzrf"
+  },
+  {
+    "title": "Joe's Garage Acts I, II & III",
+    "releaseDate": "May 1st 1987",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/203575916905b606698017bc264eb4f0378af37a.jpg?itok=-CE4Vejf"
+  },
+  {
+    "title": "London Symphony Orchestra, Vol II",
+    "releaseDate": "Sep 17th 1987",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201607/48_LSO_II-cover.jpg?itok=MiOJS-Ft"
+  },
+  {
+    "title": "The Old Masters, Box Three",
+    "releaseDate": "Dec 1st 1987",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201607/49-Old-Masters-3-cover.jpg?itok=dis0LEBj"
+  },
+  {
+    "title": "Guitar",
+    "releaseDate": "Apr 26th 1988",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/50_GUITAR-cover.jpg?itok=-0l-oGuG"
+  },
+  {
+    "title": "You Can't Do That On Stage Anymore Vol. 1",
+    "releaseDate": "May 16th 1988",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/51_YCDTOSA1-cover.png?itok=0qvjxN6C"
+  },
+  {
+    "title": "Broadway The Hard Way",
+    "releaseDate": "Oct 14th 1988",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/53_BroadwayTheHardway_cover.jpg?itok=2NEQhjqm"
+  },
+  {
+    "title": "You Can't Do That On Stage Anymore, Vol. 2 - The Helsinki Concert",
+    "releaseDate": "Oct 25th 1988",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/52_YCDTOSA2-cover.png?itok=DEOZXLIZ"
+  },
+  {
+    "title": "You Can't Do That On Stage Anymore, Vol. 3",
+    "releaseDate": "Nov 13th 1989",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/54_YCDTOSA_Vol3-cover.png?itok=zdyeDR4a"
+  },
+  {
+    "title": "The Best Band You Never Heard In Your Life",
+    "releaseDate": "Apr 16th 1991",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/55_TBBYNHIYL_5x5.jpg?itok=HGxzGbAA"
+  },
+  {
+    "title": "Make A Jazz Noise Here",
+    "releaseDate": "Jun 4th 1991",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/57_MakeAJazzNoiseHere-cover.jpg?itok=_2jKTMNj"
+  },
+  {
+    "title": "You Can't Do That On Stage Anymore, Vol. 4",
+    "releaseDate": "Jun 14th 1991",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/56_YCDTOSA_Vol4-cover.png?itok=_-uyqYKQ"
+  },
+  {
+    "title": "You Can't Do That On Stage Anymore, Vol. 6",
+    "releaseDate": "Jul 10th 1992",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/59_YCDTOSA_Vol6-cover.png?itok=4hCikX0J"
+  },
+  {
+    "title": "You Can't Do That On Stage Anymore, Vol. 5",
+    "releaseDate": "Jul 10th 1992",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/58_YCDTOSA_Vol5-cover.png?itok=t-8Lp0fI"
+  },
+  {
+    "title": "Playground Psychotics",
+    "releaseDate": "Oct 27th 1992",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/60_PlaygroundPsychotics-cover.png?itok=c6eEBZbd"
+  },
+  {
+    "title": "Ahead Of Their Time",
+    "releaseDate": "Mar 23rd 1993",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/61_AheadOfTheirTime_cover.jpg?itok=JDL0WuJ2"
+  },
+  {
+    "title": "The Yellow Shark",
+    "releaseDate": "Nov 2nd 1993",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/62-Yellow-Shark-SQ.jpg?itok=HPUmOQOS"
+  },
+  {
+    "title": "Civilization Phase III",
+    "releaseDate": "Dec 2nd 1994",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/63-Civilization-Phaze-III_.jpg?itok=DwuvAX7v"
+  },
+  {
+    "title": "London Symphony Orchestra, Vol I & II",
+    "releaseDate": "Apr 1st 1995",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/38-48_LSO-cover.png?itok=jGRDzKtg"
+  },
+  {
+    "title": "The Lost Episodes",
+    "releaseDate": "Feb 27th 1996",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/64_LostEpisodes-cover.jpg?itok=FjMHJnuO"
+  },
+  {
+    "title": "LÄTHER",
+    "releaseDate": "Sep 24th 1996",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/65_Lather_sq.jpg?itok=ff_Rn4qp"
+  },
+  {
+    "title": "Frank Zappa Plays The Music of Frank Zappa: A Memorial Tribute",
+    "releaseDate": "Oct 31st 1996",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/66_FZ_plays_FZ_COVER.jpg?itok=TmQQnA5S"
+  },
+  {
+    "title": "Have I Offended Someone?",
+    "releaseDate": "Apr 8th 1997",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/67_HIOS-cover.jpg?itok=e-aKsosZ"
+  },
+  {
+    "title": "Mystery Disc",
+    "releaseDate": "Sep 14th 1998",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/3d6cf6bc58532ca74905a12de447a2cb29e0d90c.jpg?itok=zIabNKtX"
+  },
+  {
+    "title": "EIHN - Everything Is Healing Nicely",
+    "releaseDate": "Dec 21st 1999",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/69_EIHN_1500.jpg?itok=lzrj7mms"
+  },
+  {
+    "title": "FZ:OZ",
+    "releaseDate": "Aug 16th 2002",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/70_FZOZ_1500.jpg?itok=8gIdL7sF"
+  },
+  {
+    "title": "Halloween",
+    "releaseDate": "Feb 4th 2003",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/71_Halloween_5x5.jpg?itok=dfcoKpSb"
+  },
+  {
+    "title": "Joe's Corsage",
+    "releaseDate": "May 30th 2004",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/72_JoesCorsage_1500.jpg?itok=rMnFakHf"
+  },
+  {
+    "title": "QuAUDIOPHILIAc",
+    "releaseDate": "Sep 14th 2004",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/74_QuAUDIOPHILIAc_1500.jpg?itok=VvRPyF5X"
+  },
+  {
+    "title": "Joe's Domage",
+    "releaseDate": "Oct 1st 2004",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/73_JoesDomage_5x5.jpg?itok=2ttzZWmm"
+  },
+  {
+    "title": "Joe's XMASage",
+    "releaseDate": "Dec 21st 2005",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/75_JoesXmasage_5x5.png?itok=q44aHtyc"
+  },
+  {
+    "title": "Imaginary Diseases",
+    "releaseDate": "Jan 13th 2006",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/76_ImaginaryDiseases_1500.jpg?itok=7iKQ-sGB"
+  },
+  {
+    "title": "Trance-Fusion",
+    "releaseDate": "Nov 7th 2006",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/79_TranceFusion_5x5.jpg?itok=UGgO9emt"
+  },
+  {
+    "title": "the MOFO project object (fazedooh)",
+    "releaseDate": "Dec 5th 2006",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/78_Mofo_2disc_5x5.jpg?itok=6f7Y1Ynq"
+  },
+  {
+    "title": "The MOFO project/object (4 Disc)",
+    "releaseDate": "Dec 12th 2006",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/77_Mofo_4disc_5x5.jpg?itok=cr0wKlp9"
+  },
+  {
+    "title": "Buffalo",
+    "releaseDate": "Apr 1st 2007",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/80_Buffalo_1500.jpg?itok=pXgJWqHL"
+  },
+  {
+    "title": "The Dub Room Special!",
+    "releaseDate": "Aug 24th 2007",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/81_DubRoomSpecial_1500.jpg?itok=PC_YY3Cy"
+  },
+  {
+    "title": "WAZOO",
+    "releaseDate": "Oct 30th 2007",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/82_WAZOO_1500.jpg?itok=6bHUsbNj"
+  },
+  {
+    "title": "One Shot Deal",
+    "releaseDate": "Jun 13th 2008",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/83_OneShotDeal_1500.jpg?itok=78LKBrCe"
+  },
+  {
+    "title": "Joe's Menage",
+    "releaseDate": "Sep 26th 2008",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/84_JoesMenage_5x5.jpg?itok=uG-vuQbb"
+  },
+  {
+    "title": "the LUMPY MONEY project/object",
+    "releaseDate": "Jan 9th 2009",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/85_LumpyMoney_coverSQ_1500.jpg?itok=pE5hycx9"
+  },
+  {
+    "title": "Philly '76",
+    "releaseDate": "Dec 21st 2009",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/86_Philly76_1500.jpg?itok=d5tXal_X"
+  },
+  {
+    "title": "Greasy Love Songs - an fz audio documentary project/object",
+    "releaseDate": "Apr 4th 2010",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201604/87_GreasyLoveSongs_1500.jpg?itok=9eF7aoyN"
+  },
+  {
+    "title": "Congress Shall Make No Law",
+    "releaseDate": "Sep 19th 2010",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201603/88_CSMNL_1500i.jpg?itok=U3oO_7Dd"
+  },
+  {
+    "title": "Hammersmith Odeon",
+    "releaseDate": "Nov 6th 2010",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201603/89_HammersmithOdeon_5x5.png?itok=R6S02c78"
+  },
+  {
+    "title": "Feeding the Monkies At Ma Maison",
+    "releaseDate": "Sep 22nd 2011",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201603/90_FeedingtheMonkies_NEW.jpg?itok=c5_XCrBD"
+  },
+  {
+    "title": "Carnegie Hall",
+    "releaseDate": "Oct 31st 2011",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201603/91_Carnegie-Hall_cover.jpg?itok=PfiYZrDX"
+  },
+  {
+    "title": "Understanding America",
+    "releaseDate": "Oct 30th 2012",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/93_UnderstandingAmerica_1500.jpg?itok=4oEXfTHu"
+  },
+  {
+    "title": "Road Tapes, Venue #1",
+    "releaseDate": "Oct 31st 2012",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201603/92_Road-Tapes-Venue-1-Cover.jpg?itok=2wQFXKn8"
+  },
+  {
+    "title": "Finer Moments",
+    "releaseDate": "Dec 18th 2012",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201601/52f4040b867aee9a87d5f91e9d2c3e917d1e6c16.jpg?itok=f6xZX1iL"
+  },
+  {
+    "title": "AAAFNRAA Birthday Bundle 21 Dec. 2012: Baby Snakes - The Compleat Soundtrack",
+    "releaseDate": "Dec 21st 2012",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201603/95_BBSNX%20AAAFNRAA2012%205x5.jpg?itok=PMHzr9oE"
+  },
+  {
+    "title": "Road Tapes, Venue #2",
+    "releaseDate": "Oct 31st 2013",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201603/96_Road-Tapes-2-1500px.jpg?itok=DSIhG1zu"
+  },
+  {
+    "title": "A Token Of His Extreme (Soundtrack)",
+    "releaseDate": "Nov 25th 2013",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201603/97_ATOHE-1500.jpg?itok=eFFAPFD9"
+  },
+  {
+    "title": "Joe's Camouflage",
+    "releaseDate": "Jan 30th 2014",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201603/98_JoesCamouflage.jpg?itok=6VJGYuNz"
+  },
+  {
+    "title": "Roxy By Proxy",
+    "releaseDate": "Mar 15th 2014",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201603/99_Roxy-by-Proxy.jpg?itok=pxO4fzxI"
+  },
+  {
+    "title": "Dance Me This",
+    "releaseDate": "Jun 21st 2015",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201603/100_DanceMeThis_5x5-SQ.jpg?itok=P0jiX6Yh"
+  },
+  {
+    "title": "Roxy - The Soundtrack",
+    "releaseDate": "Oct 30th 2015",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201607/102_Roxy_US_CD.jpg?itok=Qn8z0wAz"
+  },
+  {
+    "title": "Frank Zappa: 200 Motels - The Suites",
+    "releaseDate": "Nov 20th 2015",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201603/101_200Motels-TheSuites.jpg?itok=zb-vARIA"
+  },
+  {
+    "title": "Road Tapes, Venue #3",
+    "releaseDate": "May 27th 2016",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201607/103_RoadTapes3_1500px.jpg?itok=LIMRIwXD"
+  },
+  {
+    "title": "The Crux Of The Biscuit",
+    "releaseDate": "Jul 15th 2016",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201605/102_TheCruxOfTheBiscuit1500.jpg?itok=bxMUHxhB"
+  },
+  {
+    "title": "Frank Zappa For President",
+    "releaseDate": "Jul 15th 2016",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201607/105_FrankZappaforPresident1500.jpg?itok=AcCzaMgm"
+  },
+  {
+    "title": "ZAPPAtite – Frank Zappa's Tastiest Tracks",
+    "releaseDate": "Sep 23rd 2016",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201609/ZAPPAtite-cover-SQ.png?itok=cQlbRF4h"
+  },
+  {
+    "title": "Meat Light - The Uncle Meat Project/Object Audio Documentary",
+    "releaseDate": "Nov 4th 2016",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201611/107_MeatLight_coverSQ.jpg?itok=PNBE-_Ko"
+  },
+  {
+    "title": "Little Dots",
+    "releaseDate": "Nov 4th 2016",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201611/109_Little-Dots-SQcover.png?itok=te9eSacC"
+  },
+  {
+    "title": "Chicago '78",
+    "releaseDate": "Nov 4th 2016",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201611/108_Chicago78-coverSQ.jpg?itok=AolsJOSI"
+  },
+  {
+    "title": "Halloween 77 (Box Set)",
+    "releaseDate": "Oct 20th 2017",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201709/Halloween-box-purpleBGhalftone4.jpg?itok=aRMrUVXl"
+  },
+  {
+    "title": "Halloween 77 (3CD)",
+    "releaseDate": "Oct 20th 2017",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201710/Halloween_10-31_Show-NEW.png?itok=ULYhZF2c"
+  },
+  {
+    "title": "The Roxy Performances",
+    "releaseDate": "Feb 2nd 2018",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201712/RoxyPerformances_Cover.jpg?itok=EetSeGg6"
+  },
+  {
+    "title": "Zappa In New York - 40th Anniversary Deluxe Edition",
+    "releaseDate": "Mar 29th 2019",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201903/112_ZappaInNewYork40thTIN_png8.png?itok=rGiOl1VZ"
+  },
+  {
+    "title": "Orchestral Favorites 40th Anniversary Edition",
+    "releaseDate": "Aug 30th 2019",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201909/OrchestralFavorites40thAnniv_COVER_1500px.jpg?itok=eoysVlqQ"
+  },
+  {
+    "title": "Halloween 73 (4CD Box Set)",
+    "releaseDate": "Oct 25th 2019",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201909/Halloween_73-Digital-BoxSet.jpg?itok=YqeoYg8-"
+  },
+  {
+    "title": "Halloween 73 Highlights",
+    "releaseDate": "Oct 31st 2019",
+    "coverArtUrl": "https://www.zappa.com/sites/g/files/aaj776/f/styles/suzuki_breakpoints_image_desktop-sm_sq/public/release/201909/Halloween73_Highlights_Cover_ZR20031Z.jpg?itok=wxM1BpMV"
+  }
+]

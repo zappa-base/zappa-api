@@ -2,17 +2,7 @@
   "extends": "tslint:recommended",
   "rulesDirectory": ["tslint-plugin-prettier"],
   "rules": {
-    "prettier": [
-      true, 
-      {
-        "arrowParens": "always",
-        "semi": true,
-        "singleQuote": true,
-        "tabWidth": 2,
-        "trailingComma": "all",
-        "useTabs": false
-      }
-    ],
+    "prettier": [true, ".prettierrc"],
     "class-name": true,
     "comment-format": [true, "check-space"],
     "ordered-imports": [
@@ -30,7 +20,7 @@
       "allow-declarations",
       "allow-named-functions"
     ],
-    "no-console":  [true, "log"],
+    "no-console": [true, "log"],
     "no-unused-variable": [true, { "ignore-pattern": "^_" }],
     "no-var-keyword": true,
     "quotemark": [true, "single", "avoid-escape"],
