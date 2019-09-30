@@ -9,6 +9,8 @@ async function seedRunner(fileName: string, connection: Connection) {
   try {
     seedModule = await import(`./seeds/${fileName}`);
   } catch (error) {
+    console.error(error);
+
     const files = fs
       .readdirSync(`${__dirname}/seeds`)
       .filter((file) => file.slice(-3) === '.ts');

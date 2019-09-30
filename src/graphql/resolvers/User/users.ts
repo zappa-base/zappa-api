@@ -9,5 +9,8 @@ interface IArgs {
 export async function users(_: any, args: IArgs) {
   const { input = {} } = args;
 
-  return getPaginatedResults<User>(input, User, 'email', 'ASC');
+  return getPaginatedResults<User>(input, User, 'email', 'ASC', [
+    'nickname',
+    'email',
+  ]);
 }

@@ -3,6 +3,7 @@ export interface IPaginationInfo {
   offset?: number;
   page?: number;
 
+  search?: string;
   sortBy?: string;
   sortDirection?: string;
 
