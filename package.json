@@ -50,7 +50,7 @@
     "@types/nodemailer": "^6.2.0",
     "@types/nodemailer-mailgun-transport": "^1.4.0",
     "@types/pg": "^7.4.14",
-    "@types/uuid": "^3.4.4",
+    "@types/uuid": "^7.0.1",
     "concurrently": "^4.1.0",
     "faker": "^4.1.0",
     "graphql-tag": "^2.10.1",
