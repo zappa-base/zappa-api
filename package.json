@@ -18,7 +18,7 @@
     "email-templates": "^6.0.0",
     "express": "^4.17.1",
     "express-jwt": "^5.3.1",
-    "graphql": "^14.3.1",
+    "graphql": "^15.0.0",
     "graphql-iso-date": "^3.6.1",
     "graphql-scraper": "^1.2.1",
     "graphql-tools": "^4.0.4",
