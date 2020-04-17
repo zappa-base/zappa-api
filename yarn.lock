@@ -145,9 +145,13 @@
   dependencies:
     "@types/node" "*"
 
-"@types/email-templates@^6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@types/email-templates/-/email-templates-6.0.0.tgz#9caf4b8b2e1982988c562fc09f7e70429fd15f02"
+"@types/email-templates@^7.0.1":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@types/email-templates/-/email-templates-7.0.1.tgz#0b7bcafa1ff396ff69eb6bb73de11ee8469378d1"
+  integrity sha512-dO/luzyN+O60lVi9njcmh5AoofwxKz0yZiIZEbw0F2fcfe3RsAU/BUNlJDR8ry2gyjR0qn3PoOrUNJblcu9PmQ==
+  dependencies:
+    "@types/html-to-text" "*"
+    "@types/nodemailer" "*"
 
 "@types/events@*":
   version "3.0.0"
@@ -205,6 +209,11 @@
 "@types/graphql@^14.2.0":
   version "14.2.0"
   resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-14.2.0.tgz#74e1da5f2a4a744ac6eb3ed57b48242ea9367202"
+
+"@types/html-to-text@*":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@types/html-to-text/-/html-to-text-5.1.0.tgz#6fc1446da15eb23d0472657598317daf0cc060b8"
+  integrity sha512-x2pKk3G6DN7g3sA8jrAYhlsQu7EdYnj5rFj6l4QMkHV8z0Hx7FwDKhPyC4ehIakeSu01YPYpkJNVLJHBzuYpKQ==
 
 "@types/jsonwebtoken@^8.3.2":
   version "8.3.2"
