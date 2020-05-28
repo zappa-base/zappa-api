@@ -3562,6 +3562,11 @@ nodemailer@^6.2.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.2.1.tgz#20d773925eb8f7a06166a0b62c751dc8290429f3"
 
+nodemailer@^6.4.7:
+  version "6.4.7"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.4.7.tgz#b905f45d5b755d4f8b45ce017d7227d843cba081"
+  integrity sha512-lreSSov6kugFFmFWrs2fcNHqUe705wy3VTuHKNevTHWTrnQNZCzWEFHXf2j+Y65dbB5cpPenX0n3ZCUaPlTTGQ==
+
 nodemon@^1.19.1:
   version "1.19.1"
   resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.19.1.tgz#576f0aad0f863aabf8c48517f6192ff987cd5071"
